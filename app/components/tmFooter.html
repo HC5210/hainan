@@ -1,0 +1,110 @@
+<!--@*bottom*@-->
+<div class="footer mar_top_20">
+  <div class="container_24">
+<!--     <div class="com-header">
+      <p class="title">
+        <img src="../images/headerLeftIcon.png" alt="图标">
+        友情链接
+      </p>
+    </div> -->
+<!--     <div class="imgLink">
+      <ul class="clearfix">
+        <li class="pull-left"><a href="http://www.hngbwlxy.gov.cn" target="_blank"><img src="../images/linkLogo1.png" alt=""></a></li>
+        <li class="pull-left"><a href="http://www.hngbjy.com/" target="_blank"><img src="../images/linkLogo4.png" alt=""></a></li>
+        <li class="pull-left"><a href="http://www.yngbzx.cn/" target="_blank"><img src="../images/linkLogo8.png" alt=""></a></li>
+        <li class="pull-left"><a href="http://www.hngbzx.com/" target="_blank"><img src="../images/linkLogo2.png" alt=""></a></li>
+        <li class="pull-left"><a href="http://gjwlxy.ljxfw.gov.cn/Default.aspx" target="_blank"><img src="../images/linkLogo9.png" alt=""></a></li>
+        <li class="pull-left last"><a href="http://cqgj.12371.gov.cn/" target="_blank"><img src="../images/linkLogo7.png" alt=""></a></li>
+      </ul>
+    </div> -->
+    <div class="friendlyLink clearfix" dw-loading="friendlyLink">
+      <!--<select ng-model="$parent.linkNode" ng-repeat="friendlyLink in firenlyLinkData" ng-options="item.Name for item in friendlyLink.Nodes">
+        <option value="">-&#45;&#45;{{friendlyLink.Name}}-&#45;&#45;</option>
+      </select>-->
+      <div class="dropup pull-left" ng-repeat="friendlyLink in firenlyLinkData" ng-class="{'mar_left_14':$index>0}">
+        <button class="btn btn-default dropdown-toggle" type="button" id="friendlyLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          -&#45;&#45;{{friendlyLink.Name}}-&#45;&#45;
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="friendlyLink">
+          <li ng-repeat="link in friendlyLink.Nodes"><a href="{{link.Url}}" target="_blank">{{link.Name}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footerBg">
+
+    <div class="foot_con">
+      <ul class="foot_conul">
+        <li><a ui-sref="article({categoryCode:'使用说明'})">关于我们</a></li>
+        <li><a ui-sref="article({categoryCode:'联系我们'})">联系我们</a></li>
+        <li><a ui-sref="articleDetail({ID:'29'})">常见问题</a></li>
+        <li class="bor_none"><a ui-sref="article({categoryCode:'使用说明'})">使用说明</a></li>
+      </ul>
+      <p>版权所有2011-2014 Copyright（C） 中共海南省委组织部主办、海南广播电视大学承办、杭州精英在线教育科技有限公司技术支持 服务热线：（0898）66229336<!-- 主办单位：杭州精英在线教育科技股份有限公司  &nbsp;&nbsp;&nbsp;承办单位：杭州精英在线教育科技股份有限公司 &nbsp;&nbsp;&nbsp; 联系电话：0571-28990788
+        &nbsp;&nbsp;&nbsp --></p>
+      <p>琼ICP备11000396 建议使用：1024*768分辨率，16位以上颜色，IE8.0以上版本浏览器和中文大字符集访问本站 </p>
+    <!--   <p>建议使用：1024*768分辨率，16位以上颜色，IE8.0以上版本浏览器和中文大字符集web4</p> -->
+    </div>
+  </div>
+</div>
+
+<style>
+  .footer {
+
+  }
+  .foot_conul{
+    height: 36px;
+  }
+  .footer .imgLink {
+    margin: 23px 0;
+  }
+  .footer .imgLink li{
+    margin-right: 14px;
+  }
+  .footer .imgLink li.last{
+    margin-right: 0;
+  }
+
+  .friendlyLink{
+    text-align: center;
+    margin: 0px auto 24px;
+  }
+  .friendlyLink .dropup{
+    width: 188px;
+  }
+  .friendlyLink .dropup .btn{
+    width: 100%;
+    padding: 3px 12px;
+  }
+  .footer .footerBg {
+    height: 166px;
+    background-color: #ebebeb;
+    padding: 30px 0 40px 0;
+    text-align: center;
+  }
+  .foot_con{
+    width:1200px;
+    margin: 0 auto;
+     background: url(../images/govern_logo.png) no-repeat 54px 10px ;
+  }
+  .foot_con ul{
+    margin-left:80px;
+   /* margin-bottom: 30px;*/
+  }
+  .foot_con ul li{
+    float: left;
+    width:260px;
+    height: 15px;
+    border-right:1px solid #333;
+  }
+  .foot_con ul .bor_none{border:none;}
+  .footer .footerBg p{
+    line-height: 32px;
+    font-size: 12px;
+    color: #999;
+    margin-left: 10px;
+    clear: both;
+    /*margin-top:25px;*/
+  }
+</style>

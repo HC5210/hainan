@@ -1,0 +1,84 @@
+<div class="specialLearning">
+  <div class="com-header">
+    <p class="title">
+      <img src="../images/headerLeftIcon.png" alt="图标">
+      专题学习
+    </p>
+  </div>
+  <div class="tmBorder">
+    <ul class="specialLearningList">
+      <li ng-repeat="list in studySpecialData.ListData.Topics" class="clearfix">
+        <div class="left pull-left img_div">
+          <a ui-sref="courseCenter({channelId:list.Id,channelType:'topics'})" target="_blank">
+            <img class="specialImg" ng-src="{{list.Img}}" err-Src="images/notFound.jpeg" alt="">
+            <img ng-if="list.Type=='required'" class="img_YN" src="../images/zbixiu.png" />
+            <img ng-if="list.Type!='required'" class="img_YN" src="../images/zxuanxiu.png" />
+          </a>
+          <!-- <a ui-sref="courseCenter({channelId:list.Id,channelType:'topics'})"  target="_blank">{{list.Name}}</a> -->
+        </div>
+        <!-- <div class="right pull-left">
+          <p class="title ellipsis" >
+            <a ui-sref="{{list.Url}}" target="_blank">{{list.SeriesName}}</a>
+          </p>
+          <p class="desc">{{list.SeriesDescription|wordLimit:45}}</p>
+          <p class="userCount">用户量：{{list.UserCount}}</p>
+        </div> -->
+      </li>
+    </ul>
+    <p ng-show="showNoSpecialClass" class="result">暂无专题学习</p>
+  </div>
+</div>
+
+<style>
+  .specialLearning {
+
+  }
+  .specialLearningList {
+
+  }
+  .specialLearningList li{
+    width:200px;
+    margin: 10px;
+    float: left;
+  }
+  .img_div{
+    width:200px;
+    height:90px;
+    float: left;
+    position: relative;
+  }
+  .img_YN{
+    position: absolute;
+    top: 0;
+    right:0;
+  }
+  .specialLearningList li .specialImg {
+    width:200px;
+    height: 90px;
+  }
+  .specialLearningList li .right {
+    padding: 5px 10px;
+   /* width: 50%;*/
+  }
+  .specialLearningList li .right .title a{
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    height: 25px;
+    line-height: 25px;
+  }
+  .specialLearningList li .right .title a:hover{
+    color: #000;
+  }
+  .specialLearning li .right .desc {
+    color: #666;
+    margin-top: 5px;
+    height: 40px;
+  }
+  .specialLearning li .right .userCount {
+    color: #ff9842;
+    margin-top: 10px;
+    height: 25px;
+    line-height: 25px;
+  }
+</style>

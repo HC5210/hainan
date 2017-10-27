@@ -1,0 +1,114 @@
+<div class="navbg">
+  <div class="container_24">
+    <ul class="nav nav-tabs">
+     <!--  <li role="presentation" ui-sref-active="active"><a ui-sref="main">首页</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="noticelist">通知公告</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="trainingClass">班级园地</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="courseCenter">课程中心</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="personalCenter">个人中心</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="testCenter">在线考试</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="article({categoryCode:'onlineHelp'})">在线帮助</a></li> -->
+      <li role="presentation" ui-sref-active="active"><a ui-sref="main">首页</a></li>
+      <!-- <li role="presentation" ui-sref-active="active"><a ui-sref="noticelist">通知公告</a></li> -->
+     <!--  <li role="presentation" ui-sref-active="active"><a ui-sref="newsCenter">新闻中心</a></li> -->
+      <li class="Newscenter_xia" role="presentation" ui-sref-active="active"><a ui-sref="article({categoryCode:'新闻中心',categoryId:''})">新闻中心</a>
+        <div role="presentation" >
+          <a  ui-sref="article({categoryCode:'时政要闻',categoryId:''})">时政要闻</a>
+          <a  ui-sref="article({categoryCode:'干教资讯',categoryId:''})">干教资讯</a>
+          <a  ui-sref="article({categoryCode:'成果交流',categoryId:''})">成果交流</a>
+          <a  ui-sref="noticelist">通知公告</a>
+        </div>
+      </li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="courseCenter">课件中心</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="personalCenter">个人中心</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="caseTeach({channelId:'187'})">案例教学</a></li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="featureHainan({channelId:'213'})">特色海南</a></li>
+      <li class="online_help" role="presentation" ui-sref-active="active"><a ui-sref="article({categoryCode:'在线帮助',categoryId:''})">在线帮助</a>
+        <div role="presentation" >
+          <a ui-sref="article({categoryCode:'使用说明',categoryId:''})">使用说明</a>
+          <a ui-sref="article({categoryCode:'联系我们',categoryId:''})">联系我们</a>
+          <a ui-sref="article({categoryCode:'学习要求',categoryId:''})">学习要求</a>
+        </div>
+      </li>
+      <li role="presentation" ui-sref-active="active"><a ui-sref="trainingClass">班级园地</a></li>
+     <li role="presentation"  ui-sref-active="active"><a ng-click="loginOut('out')">退出系统</a></li>
+      
+<!-- <li role="presentation" ui-sref-active="active"><a ui-sref="testCenter">在线考试</a></li>-->
+    </ul>
+  </div>
+</div>
+<style>
+  .navbg {
+    text-align: center;
+    background: #db1011;
+    height: 42px;
+    
+  }
+  .navbg .nav{
+    height: 42px;
+    margin:0 auto;
+    background: #db1011;
+  }
+  .navbg .nav-tabs {
+    border-bottom: none;
+  }
+  .navbg .nav-tabs > li > a {
+    color: #fff;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 0;
+    border: none;
+    width: 132px;
+    height: 42px;
+    line-height: 42px;
+  }
+  .nav > li > a:hover, .nav > li > a:focus {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  .navbg .nav > li > a:hover {
+    background-color: #f50001;
+  }
+  .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #fff;
+    background-color: #f50001;
+    border: none;
+  }
+  .online_help,.Newscenter_xia{
+    position: absolute;
+  }
+  .online_help div,.Newscenter_xia div{
+    position: absolute;
+    left:0;
+    top:40px;
+    width:132px;
+    height:120px;
+    background:#f5000;
+    display: none;
+    z-index: 11111;
+  }
+  .online_help div a,.Newscenter_xia div a{
+    display:block;
+    width:132px;
+    height: 40px;
+    line-height: 40px;
+    background:#f50001;
+    color:#fff;
+  }
+</style>
+<script type="text/javascript">
+    $(".online_help").mouseover(function(){
+      $(".online_help div").css("display","block")
+    })
+    $(".online_help").mouseout(function(){
+      $(".online_help div").css("display","none")
+    })
+    $(".Newscenter_xia").mouseover(function(){
+      $(".Newscenter_xia div").css("display","block")
+    })
+    $(".Newscenter_xia").mouseout(function(){
+      $(".Newscenter_xia div").css("display","none")
+    })
+</script>
+

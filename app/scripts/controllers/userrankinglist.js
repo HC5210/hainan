@@ -1,0 +1,88 @@
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name luZhouApp.controller:UserrankinglistCtrl
+ * @description
+ * # UserrankinglistCtrl
+ * Controller of the luZhouApp
+ */
+angular.module('luZhouApp')
+  .controller('UserrankinglistCtrl', function ($scope, $rootScope, $cookieStore, commonService, $timeout, $loading, $stateParams) {
+    //防伪造请求
+    $scope.vmusertab={};
+    $scope.token = commonService.AntiForgeryToken();
+    //用户学时排行
+
+    // $loading.start('userRankingList');
+    // $scope.getUserRanking = function (options) {
+    //   var params = $.extend({},ALL_PORT.RankUserList.data,options)
+    //   commonService.getData(ALL_PORT.RankUserList.url, 'POST',params )
+    //     .then(function(response) {
+    //       $loading.finish('userRankingList');
+    //       $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
+    //       $scope.userRankingData = response.Data;
+    //     });
+    // }
+    //个人排行
+    //  $loading.start('userRankingList');
+    // $scope.getUserRanking=function(batchId){
+    //   commonService.getData(ALL_PORT.RankUserList.url,'POST',
+    //     $.extend({},ALL_PORT.RankUserList.data,{BatchId:batchId}))
+    //   .then(function(response){
+    //     $loading.finish('userRankingList');
+    //     if(batchId == 10){
+    //       $scope.userLeaderRankingData=response.Data;
+    //       $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
+    //     }else if(batchId == 7){
+    //       $scope.UserproRankingData=response.Data;
+    //       $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
+    //     }else if(batchId == 11){
+    //       $scope.UserModdelRankingData=response.Data;;
+    //       $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
+    //     }
+    //   })
+
+    // };
+    //     $scope.getUserRanking(10);
+    //     $scope.getUserRanking(7);
+    //     $scope.getUserRanking(11);
+        
+    $scope.params = ALL_PORT.RankUserList.data;
+   
+    $scope.getUserRanking = function (options) {
+       $loading.start('userRankingList');
+       $.extend($scope.params, options);
+     // var params = $.extend({},ALL_PORT.RankGroupList.data,options)
+      commonService.getData(ALL_PORT.RankUserList.url, 'POST',$scope.params )
+        .then(function(response) {
+          $loading.finish('userRankingList');
+          
+          if($scope.params.BatchId == 10){
+            $scope.userLeaderRankingData = response.Data;
+          }else if($scope.params.BatchId == 7){
+             $scope.UserproRankingData = response.Data;
+          }else if($scope.params.BatchId == 11){
+             $scope.UserModdelRankingData = response.Data;
+          }
+          if (response.Data.ListData.length === 0) {
+            $scope.paginationConf.totalItems = 0;
+          } else {
+            $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
+          }
+          
+        });
+    }
+    $scope.getUserRanking();
+
+    $scope.paginationConf = $.extend({},paginationConf,{itemsPerPage: ALL_PORT.RankUserList.data.rows});
+
+    //分页
+    // 通过$watch currentPage 当他们一变化的时候，重新获取数据条目
+    $scope.$watch('paginationConf.currentPage', function() {
+      var pageOptions = {
+        page: $scope.paginationConf.currentPage
+      };
+      $scope.getUserRanking(pageOptions);
+    });
+  });

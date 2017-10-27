@@ -1,0 +1,126 @@
+<!--用户排行列表（more）-->
+<div class="userRankingList">
+  <div class="com-header">
+    <p class="title">
+      <img src="../images/headerLeftIcon.png" alt="图标">
+      {{userLeaderRankingData.ViewBag.TitleNav}}
+    </p>
+  </div>
+  <div class="tmBorder">
+    <ol class="breadcrumb">
+      <li class="currentPosition">您的当前位置:</li>
+      <li><a ui-sref="main">首页</a></li>
+      <li class="active">{{userLeaderRankingData.ViewBag.TitleNav}}</li>
+    </ol>
+    <ul class="rank_tab" ng-init="vmusertab.userrankActive=0">
+      <li ng-class="{active_tabU:vmusertab.userrankActive==0}">
+        <a ng-click="vmusertab.userrankActive=0;getUserRanking({'BatchId':10})">省级干部学习排行</a>
+      </li>
+      <li ng-class="{active_tabU:vmusertab.userrankActive==1}" class="ranktab_bor">
+        <a ng-click="vmusertab.userrankActive=1;getUserRanking({'BatchId':7})">处级干部学习排行</a></li>
+      <li  ng-class="{active_tabU:vmusertab.userrankActive==2}">
+        <a ng-click="vmusertab.userrankActive=2;getUserRanking({'BatchId':11})">科级及以下干部学习排行</a>
+      </li>
+    </ul>
+    <div class="myTab" ng-show="vmusertab.userrankActive==0" dw-loading="userRankingList">
+      <div class="tab-content">
+        <div class="tab-panel perlist">
+          <div class="title_bar">
+            <span class="list2">排名</span>
+            <span class="list2">姓名</span>
+            <span class="list2">学时</span>
+            <span class="list2">学次</span>
+            <span class="list2">单位名称</span>
+          </div>
+          <div class="list" ng-repeat="userLeaderRankingData in userLeaderRankingData.ListData"  ng-class="{'rankListBg':$index%2!=0}">
+              <span class="list2">{{(paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1}}</span>
+              <span class="list2">{{userLeaderRankingData.UserName}}</span>
+              <span class="list2">{{userLeaderRankingData.Credit}}</span>
+              <span class="list2">{{userLeaderRankingData.LearnTime}}</span>
+              <span class="list2 ellipsis">{{userLeaderRankingData.DepartmentName}}</span>
+          </div>
+        </div>
+      </div>
+      <div tm-pagation conf="paginationConf"></div>
+    </div>
+    <div class="myTab" ng-show="vmusertab.userrankActive==1" dw-loading="userRankingList">
+     <div class="tab-content">
+        <div class="tab-panel perlist">
+          <div class="title_bar">
+            <span class="list2">排名</span>
+            <span class="list2">姓名</span>
+            <span class="list2">学时</span>
+            <span class="list2">学次</span>
+            <span class="list2">单位名称</span>
+          </div>
+          <div class="list" ng-repeat="UserproRankingData in UserproRankingData.ListData"  ng-class="{'rankListBg':$index%2!=0}">
+              <span class="list2">{{(paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1}}</span>
+              <span class="list2">{{UserproRankingData.UserName}}</span>
+              <span class="list2">{{UserproRankingData.Credit}}</span>
+              <span class="list2">{{UserproRankingData.LearnTime}}</span>
+              <span class="list2 ellipsis">{{UserproRankingData.DepartmentName}}</span>
+          </div>
+        </div>
+      </div>
+      <div tm-pagation conf="paginationConf"></div>
+    </div>
+    <div class="myTab" ng-show="vmusertab.userrankActive==2" dw-loading="userRankingList">
+      <div class="tab-content">
+        <div class="tab-panel perlist">
+          <div class="title_bar">
+            <span class="list2">排名</span>
+            <span class="list2">姓名</span>
+            <span class="list2">学时</span>
+            <span class="list2">学次</span>
+            <span class="list2">单位名称</span>
+          </div>
+          <div class="list" ng-repeat="UserModdelRankingData in UserModdelRankingData.ListData"  ng-class="{'rankListBg':$index%2!=0}">
+              <span class="list2">{{(paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1}}</span>
+              <span class="list2">{{UserModdelRankingData.UserName}}</span>
+              <span class="list2">{{UserModdelRankingData.Credit}}</span>
+              <span class="list2">{{UserModdelRankingData.LearnTime}}</span>
+              <span class="list2 ellipsis">{{UserModdelRankingData.DepartmentName}}</span>
+          </div>
+        </div>
+      </div>
+      <div tm-pagation conf="paginationConf"></div>
+    </div>
+  </div>
+</div>
+<style>
+.rank_tab{
+    width:100%;
+    height:40px;
+    background: #ddd;
+  }
+  .rank_tab li{
+    float: left;
+    width:33%;
+    text-align: center;
+    line-height: 40px;
+    font-size:16px;
+  }
+  .rank_tab li a:hvoer{
+    background: #f50001;
+  }
+  .rank_tab li a{
+    width:100%;
+    float: left;
+    height:40px;
+    text-align:center;
+  }
+  .rank_tab li a:hover{
+    background: red;
+    color:#fff;
+  }
+  .rank_tab .ranktab_bor{
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+  }
+  .rank_tab .active_tabU{
+    background:#db1011;
+  }
+  .rank_tab .active_tabU a{
+    color: #fff;
+  }
+  </style>

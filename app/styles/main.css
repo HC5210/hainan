@@ -1,0 +1,1525 @@
+/**
+ * 测试
+ */
+/*公共样式*/
+/**
+ * mixins
+ */
+/*字体*/
+/*颜色*/
+/*超出显示...*/
+/*两端对齐*/
+/*向右箭头*/
+/*圆点*/
+/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+/* Sections
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+/**
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic;
+}
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* Forms
+   ========================================================================== */
+/**
+ * Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+}
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto;
+}
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block;
+}
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+/**
+ * base
+ */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  font-family: '"Microsoft Yahei", "AvenirNext-Regular", "Helvetica Neue", "lucida grande", "PingFangHK-Light", "STHeiti", "Heiti SC", "Hiragino Sans GB", "Microsoft JhengHei", SimHei, "WenQuanYi Micro Hei", "Droid Sans", "Roboto", Helvetica, Tahoma, Arial, "sans-serif"';
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+}
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  border: 0px;
+  /*
+    For IE.
+    http://css-tricks.com/ie-fix-bicubic-scaling-for-images
+  */
+  -ms-interpolation-mode: bicubic;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+ul,
+ol {
+  display: list-item;
+  list-style: none;
+}
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+::selection {
+  background: #db1011;
+  color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+a {
+  color: #333;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s ease;
+}
+a:focus {
+  text-decoration: underline;
+  text-decoration-skip: ink;
+}
+a:hover {
+  color: #e01011;
+}
+a:active {
+  color: #e51112;
+}
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+}
+a[disabled] {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: '"Microsoft Yahei", "AvenirNext-Regular", "Helvetica Neue", "lucida grande", "PingFangHK-Light", "STHeiti", "Heiti SC", "Hiragino Sans GB", "Microsoft JhengHei", SimHei, "WenQuanYi Micro Hei", "Droid Sans", "Roboto", Helvetica, Tahoma, Arial, "sans-serif"';
+}
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+.clearFix {
+  zoom: 1;
+}
+.clearFix:before,
+.clearFix:after {
+  content: " ";
+  display: table;
+}
+.clearFix:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+/*超出显示...*/
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+a.btn {
+  color: #fff;
+}
+.red {
+  color: #db1011;
+}
+/*两端对齐*/
+.justify {
+  text-align: justify;
+  -ms-text-justify: inter-ideograph;
+  text-justify: inter-ideograph;
+}
+/*右箭头*/
+.triangleRight {
+  font-size: 0;
+  line-height: 0;
+  border-width: 5px;
+  border-color: #db1011;
+  border-right-width: 0;
+  border-style: dashed;
+  border-left-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+/*圆点*/
+.dian {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: #333;
+}
+/*模块头部公用样式*/
+.com-header {
+  width: 100%;
+  height: 50px;
+  zoom: 1;
+  border-bottom: 1px solid #db1011;
+}
+.com-header:before,
+.com-header:after {
+  content: " ";
+  display: table;
+}
+.com-header:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.com-header:before,
+.com-header:after {
+  content: " ";
+  display: table;
+}
+.com-header:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.com-header .more {
+  height: 50px;
+  line-height: 50px;
+  float: right !important;
+}
+.com-header .title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  float: left !important;
+}
+/*课程分类头部1*/
+.titlebg .txt {
+  width: 100%;
+  height: 49px;
+  line-height: 49px;
+  text-indent: 49px;
+  font-size: 20px;
+  color: #333;
+}
+/*课程分类头部2*/
+.titlebg2 .txt {
+  height: 65px;
+  line-height: 65px;
+  color: #666;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+/*文章分类，个人中心导航*/
+.categoryGuide {
+  padding: 20px 20px 0 20px;
+}
+.categoryGuide li {
+  width: 50%;
+  float: left !important;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.categoryGuide li a.btn {
+  display: inline-block;
+  width: 100px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  color: #fff;
+  background: #db1011;
+  padding: 0;
+}
+.categoryGuide li a.btn:hover {
+  background-color: #e51112;
+}
+/*日期选择背景图*/
+.datebg {
+  background: url(../images/datePicker.gif) no-repeat right;
+}
+/*路径导航通用样式*/
+.breadcrumb .currentPosition {
+  padding-left: 25px;
+  background: url("../images/link.gif") 0 2px no-repeat;
+}
+.formSearch {
+  padding-left: 40px;
+  padding-bottom: 10px;
+}
+.formSearch .form-control {
+  height: 26px;
+}
+.formSearch .form-group {
+  width: 70%;
+}
+.formSearch .form-group input.form-control {
+  width: 100%;
+}
+.formSearch select.form-control {
+  padding: 0;
+}
+.formSearch .btn.btn-default {
+  padding: 2px 21px;
+  background: #db1011;
+  color: #fff;
+  border: 1px solid #db1011;
+  height: 26px;
+}
+.formSearch .btn.btn-default:hover {
+  background: #e01011;
+  border: 1px solid #db1011;
+}
+/*模板通用边框*/
+.tmBorder {
+  border: 1px solid #d9d9d9;
+}
+.tmBorder-green {
+  border: 1px solid #d9d9d9;
+  border-top: 6px solid #6d9d85;
+}
+.tmBorder-blue {
+  border: 1px solid #d9d9d9;
+  border-top: 6px solid #3a7fb6;
+}
+.tmBorder-cyan {
+  border: 1px solid #d9d9d9;
+  border-top: 6px solid #b4ca41;
+}
+.tmBorder-red {
+  border-top: 6px solid #db1011;
+}
+/*星星*/
+.star {
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  width: 121px;
+  height: 18px;
+  margin-right: 14px;
+  background: url(../images/star_all.png) 0 0 no-repeat;
+  vertical-align: middle;
+}
+/*验证码*/
+.verificationCode {
+  width: 110px;
+  height: 30px;
+  margin-left: 10px;
+}
+/*
+ *星级评论
+ */
+.my-stars-list {
+  height: 34px;
+  line-height: 34px;
+  float: left !important;
+}
+.my-stars-list .my-stars-items {
+  float: left !important;
+  cursor: pointer;
+  font-size: 0;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  background: url(../images/star_all_02.png) no-repeat center;
+}
+.my-stars-list .myStarHover.my-stars-items {
+  background: url(../images/star_all_04.png) no-repeat center;
+}
+.my-stars-list .myStarsSel.my-stars-items {
+  background: url(../images/star_all_04.png) no-repeat center;
+}
+/*播放进度*/
+.progress {
+  height: 18px;
+  margin-top: 9px;
+  margin-bottom: 0;
+  background-color: #c7c7c7;
+}
+/*购物车头部*/
+.shoppingTitle {
+  text-align: left;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.shoppingTitle .verticalLine {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  left: 0px;
+  margin-left: 10px;
+  width: 30px;
+  height: 20px;
+  border-left: 2px solid #ff9842;
+}
+/*标签页*/
+.myTab {
+  text-align: center;
+}
+.myTab ul.nav-tabs {
+  background-color: #f3f3f3;
+}
+.myTab ul.nav-tabs > li > a {
+  padding: 12px 20px;
+  font-size: 16px;
+}
+.myTab ul.nav-tabs > li.active > a {
+  color: #db1011;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 3px solid #db1011;
+  border-bottom-color: transparent;
+}
+.myTab .perlist .title_bar {
+  width: 100%;
+  font-weight: bold;
+  background: #EDF3FC;
+  color: #333;
+  border-bottom: 1px dashed #ccc;
+  zoom: 1;
+}
+.myTab .perlist .title_bar:before,
+.myTab .perlist .title_bar:after {
+  content: " ";
+  display: table;
+}
+.myTab .perlist .title_bar:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.myTab .perlist .title_bar:before,
+.myTab .perlist .title_bar:after {
+  content: " ";
+  display: table;
+}
+.myTab .perlist .title_bar:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.myTab .perlist span a.fav {
+  margin-left: 10px;
+}
+.myTab .perlist .list {
+  width: 100%;
+  border-bottom: 1px dashed #ccc;
+  zoom: 1;
+}
+.myTab .perlist .list:before,
+.myTab .perlist .list:after {
+  content: " ";
+  display: table;
+}
+.myTab .perlist .list:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.myTab .perlist .list:before,
+.myTab .perlist .list:after {
+  content: " ";
+  display: table;
+}
+.myTab .perlist .list:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.myTab .perlist .list:hover {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+}
+.list0-75 {
+  width: 7.5%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list1 {
+  width: 10%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list1-5 {
+  width: 15%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list2 {
+  width: 20%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list2-5 {
+  width: 25%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list3 {
+  width: 30%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list3-5 {
+  width: 35%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list4 {
+  width: 40%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list4-5 {
+  width: 45%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list5 {
+  width: 50%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list5-5 {
+  width: 55%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list6 {
+  width: 60%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list6-5 {
+  width: 65%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list7 {
+  width: 70%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list7-5 {
+  width: 75%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list8 {
+  width: 80%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list8-5 {
+  width: 85%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list9 {
+  width: 90%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list9-5 {
+  width: 95%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.list10 {
+  width: 100%;
+  float: left;
+  line-height: 37px;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*排行标签页*/
+.rankTab {
+  text-align: center;
+}
+.rankTab ul.nav-tabs {
+  background-color: #fff;
+  border-bottom: none;
+  height: 45px;
+}
+.rankTab ul.nav-tabs > li {
+  width: 33.33%;
+  text-align: center;
+}
+.rankTab ul.nav-tabs > li > a {
+  display: inline-block;
+  color: #333;
+  height: 45px;
+  line-height: 45px;
+  padding: 0;
+  margin: 0 30px;
+  font-size: 16px;
+  width: 33.33%;
+  border-bottom: 3px solid transparent;
+}
+.rankTab ul.nav-tabs > li.active > a {
+  color: #db1011;
+  border-bottom: 3px solid #db1011;
+  text-align: center;
+  background-color: #fff;
+  font-weight: 600;
+}
+/*偶数行背景*/
+.rankListBg {
+  background-color: #f2f2f2;
+}
+/*placeholder*/
+.placeholder {
+  position: absolute;
+  color: #999999;
+  cursor: text;
+  z-index: 1;
+}
+/*暂无数据*/
+.result {
+  color: #333;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  line-height: 250px;
+  /*margin-left: -250px;*/
+}
+/*排行前三背景*/
+.rankFirstBg {
+  background: url("../images/rankOne.png") center no-repeat;
+}
+.rankSecondBg {
+  background: url("../images/rankTwo.png") center no-repeat;
+}
+.rankThirdBg {
+  background: url("../images/rankThree.png") center no-repeat;
+}
+/*margin*/
+.mar_top_5 {
+  margin-top: 5px;
+}
+.mar_top_10 {
+  margin-top: 10px;
+}
+.mar_top_12 {
+  margin-top: 12px;
+}
+.mar_top_15 {
+  margin-top: 15px;
+}
+.mar_top_20 {
+  margin-top: 20px;
+}
+.mar_top_34 {
+  margin-top: 34px;
+}
+.mar_top_40 {
+  margin-top: 40px;
+}
+.mar_left_14 {
+  margin-left: 14px;
+}
+.mar_left_10 {
+  margin-left: 10px;
+}
+.mar_left_15 {
+  margin-left: 15px;
+}
+.mar_left_20 {
+  margin-left: 20px;
+}
+.mar_left_24 {
+  margin-left: 24px;
+}
+.mar_left_30 {
+  margin-left: 30px;
+}
+.mar_left_45 {
+  margin-left: 45px;
+}
+.mar_right_10 {
+  margin-right: 10px;
+}
+.mar_right_12 {
+  margin-right: 12px;
+}
+.mar_right_20 {
+  margin-right: 20px;
+}
+.mar_bottom_20 {
+  margin-bottom: 20px;
+}
+/*paddingleft*/
+.pad_left_10 {
+  padding-left: 10px;
+}
+.pad_left_15 {
+  padding-left: 15px;
+}
+.pad_left_16 {
+  padding-left: 16px;
+}
+.pad_left_20 {
+  padding-left: 20px;
+}
+.pad_left_25 {
+  padding-left: 25px;
+}
+.pad_left_35 {
+  padding-left: 35px;
+}
+.pad_left_45 {
+  padding-left: 45px;
+}
+.pad_right_10 {
+  padding-right: 10px;
+}
+.pad_right_15 {
+  padding-right: 15px;
+}
+.pad_right_20 {
+  padding-right: 20px;
+}
+.pad_right_30 {
+  padding-right: 30px;
+}
+.pad_top_20 {
+  padding-top: 20px;
+}
+/**
+ * 模块的样式
+ */
+/**
+ * 下拉树
+ */
+#tt {
+  position: absolute;
+  z-index: 10000;
+  width: 300px;
+  max-height: 450px;
+  overflow: scroll;
+  left: 0;
+  top: 25px;
+  display: none;
+  background-color: #f7f7f7;
+}
+/**
+ * 折叠面板
+ */
+.expander {
+  margin-left: 10px;
+}
+.expander > .title {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.expander > .title:hover {
+  background-color: #f7f7f7;
+}
+.expander.body {
+  padding: .1em .3em;
+}
+/**
+ * 折叠面板
+ */
+.expander2 {
+  margin-left: 10px;
+}
+.expander2 > .title {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.expander2 > .title:hover {
+  background-color: #f7f7f7;
+}
+.expander2 > .title .name {
+  display: inline-block;
+  width: 80%;
+}
+.expander2.body {
+  padding: .1em .3em;
+}
+/**
+ * 申请发票
+ */
+.applyInvoice .description {
+  margin: 10px 10px 10px 40px;
+  border: 1px solid #d9d9d9;
+  padding: 10px 10px 10px 20px;
+}
+.applyInvoice .description li .dian {
+  background-color: #ff9842;
+  position: relative;
+  left: -10px;
+}
+.applyInvoice .cartList {
+  text-align: center;
+}
+.applyInvoice .cartList .title {
+  font-weight: bold;
+  background: #edf3fc;
+  color: #333;
+  height: 40px;
+  line-height: 40px;
+  margin: 10px 0 0 0;
+  border: 1px solid #d9d9d9;
+  border-top: 0;
+  zoom: 1;
+}
+.applyInvoice .cartList .title:before,
+.applyInvoice .cartList .title:after {
+  content: " ";
+  display: table;
+}
+.applyInvoice .cartList .title:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.applyInvoice .cartList .title:before,
+.applyInvoice .cartList .title:after {
+  content: " ";
+  display: table;
+}
+.applyInvoice .cartList .title:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.applyInvoice .cartList .content {
+  border-bottom: 1px dotted #80b2ff;
+  border-top: 1px dotted #80b2ff;
+  height: 48px;
+  line-height: 48px;
+  margin: 10px 0;
+  background-color: #f3f3f3;
+  zoom: 1;
+}
+.applyInvoice .cartList .content:before,
+.applyInvoice .cartList .content:after {
+  content: " ";
+  display: table;
+}
+.applyInvoice .cartList .content:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.applyInvoice .cartList .content:before,
+.applyInvoice .cartList .content:after {
+  content: " ";
+  display: table;
+}
+.applyInvoice .cartList .content:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.applyInvoice .cartList span {
+  float: left !important;
+}
+.applyInvoice .cartList .list1 {
+  width: 10%;
+}
+.applyInvoice .cartList .list2 {
+  width: 20%;
+}
+.applyInvoice .cartList .list3 {
+  width: 30%;
+}
+.applyInvoice .invoiceMessage {
+  padding: 10px 20px;
+}
+.applyInvoice .invoiceMessage .form-group {
+  width: 48%;
+  height: 46px;
+  line-height: 46px;
+}
+.applyInvoice .invoiceMessage .form-group label {
+  width: 80px;
+}
+.applyInvoice .invoiceMessage .form-group input[type="text"] {
+  width: 270px;
+}
+.applyInvoice .invoiceMessage .form-group .radio > span {
+  display: inline-block;
+  width: 80px;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+.applyInvoice .invoiceMessage .form-group .submit {
+  text-align: center;
+}
+.applyInvoice .invoiceMessage .form-group .submit .btn {
+  width: 270px;
+}
+/**
+ * 文章分类
+ */
+.articleCategory {
+  /*min-height: 525px;*/
+}
+.articleCategory .panels {
+  margin-left: 20px;
+  padding: 5px 18px;
+  cursor: pointer;
+}
+.articleCategory .panels:hover {
+  background-color: #f6f6f6;
+}
+.articleCategory .panel1 .panel1-heading {
+  background-color: #fff;
+  padding: 0 20px;
+}
+.articleCategory .panel1 .panel1-heading .category,
+.articleCategory .panel1 .panel1-heading .category2 {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #0f0f0f;
+  font-size: 15px;
+  position: relative;
+  top: 0px;
+  cursor: pointer;
+}
+.articleCategory .panel1 .panel1-heading a {
+  display: inline-block;
+  text-align: left;
+  font-size: 15px;
+  color: #0f0f0f;
+  width: 90%;
+  min-height: 34px;
+  line-height: 34px;
+  padding: 0 10px;
+}
+.articleCategory .panel1 a:hover {
+  background-color: #f1f1f1;
+  color: #0f0f0f;
+}
+.articleCategory .panel1 .panel1-body {
+  padding: 0;
+}
+.articleCategory.panel1-group .panel1-heading + .panel1-collapse > .panel1-body,
+.panel1-group .panel1-heading + .panel1-collapse > .list-group {
+  border-top: none;
+}
+.articleCategory .panel1 .panel1-body li {
+  margin-left: 60px;
+}
+.articleCategory .panel1 .panel1-body li a {
+  display: inline-block;
+  padding: 7px;
+  width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.panel1-collapse {
+  margin-left: 15px;
+}
+/**
+ * 热门文章
+ */
+.articleHot {
+  text-align: center;
+}
+.articleHot .rankingList {
+  zoom: 1;
+  height: 44px;
+  line-height: 44px;
+}
+.articleHot .rankingList:before,
+.articleHot .rankingList:after {
+  content: " ";
+  display: table;
+}
+.articleHot .rankingList:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.articleHot .rankingList:before,
+.articleHot .rankingList:after {
+  content: " ";
+  display: table;
+}
+.articleHot .rankingList:after {
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+  height: 0;
+}
+.articleHot .rankingList li {
+  height: 44px;
+  line-height: 44px;
+  float: left !important;
+}
+.articleHot .rankingList li a {
+  width: 100%;
+}
+.articleHot .rankingList .list2 span {
+  display: inline-block;
+  width: 100%;
+  height: 44px;
+}
+.articleHot .rankingList .list8 {
+  text-align: left;
+  padding-right: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/**
+ * 文章列表
+ */
+.articleList .titleName {
+  width: 500px;
+}
+.articleList th {
+  background-color: #edf3fc;
+  text-align: center;
+}
+.articleList td img {
+  margin: 0 10px;
+}
+.articleList td a {
+  display: inline-block;
+  width: 458px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.articleList td.listDate {
+  text-align: center;
+}

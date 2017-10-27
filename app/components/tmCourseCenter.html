@@ -1,0 +1,158 @@
+<div class="courselCenter">
+  <div class="com-header">
+    <p class="title">
+      <img src="../images/headerLeftIcon.png" alt="图标">
+      课程中心
+    </p>
+    <p class="more">
+      <a ui-sref="courseCenter" target="_blank"><img src="../images/more.png" alt="更多"></a>
+    </p>
+  </div>
+<!--   <common-header title="courseTitle" show-more="courseShow" link-url="courseLink"></common-header> -->
+  <div class="btn-group courselLink" ng-init="vmc.activeTab=0" role="group">
+    <a class="btn btn-default" ng-class="{active: vmc.activeTab == 0}" ng-click="vmc.activeTab = 0">课程频道</a>
+    <a class="btn btn-default" ng-class="{active: vmc.activeTab == 1}" ng-click="vmc.activeTab = 1">最新课程</a>
+    <!--<a class="btn btn-default" ng-repeat="courseName in courselassification" ng-click="searchCourseList(courseName.Id)" repeat-finish="renderFinish()">{{courseName.Name}}</a>-->
+  </div>
+  <div class="courseCategory mar_top_20" ng-show="vmc.activeTab == 0">
+    <ul class="clearfix">
+      <li class="pull-left" ng-repeat="list in courselassification">
+        <a ui-sref="courseCenter({channelId:list.Id})" target="_blank">
+          <img class="categoryImg" ng-src="{{list.Img}}"  title="{{list.Name}}" err-Src="images/notFound.jpeg">
+        </a>
+        <p class="categoryName"><a href="">{{list.Name}}</a></p>
+      </li>
+    </ul>
+    <p ng-show="showNoCourse1" class="result">暂无课程</p>
+  </div>
+  <div class="courseList mar_top_20 clearfix" dw-loading="courseList" ng-show="vmc.activeTab == 1">
+    <ul class="clearfix">
+      <li ng-repeat="courseCenterData in courseCenterData">
+        <a ui-sref="courseDetails({Id:courseCenterData.Id})" title="{{courseCenterData.Name}}" target="_blank">
+          <img ng-src="{{imageCourse+'/'+courseCenterData.Img}}" err-Src="images/notCourse.png" alt="">
+        </a>
+        <div ng-if="$index<2" class="hotCourse">
+          <p class="bg"></p>
+          <p class="content">
+            <img src="../images/hotIcon.png" alt="">
+            <span>{{courseCenterData.ClickCount}}次</span>
+          </p>
+        </div>
+        <div class="mar_top_10 desc">
+          <p><a ui-sref="courseDetails({Id:courseCenterData.Id})" title="{{courseCenterData.Name}}" target="_blank">{{courseCenterData.Name}}</a>
+          </p>
+          <p class="clearfix"><span class="pull-left">讲师：{{courseCenterData.Teacher}}</span><span
+            class="red pull-right">学分：{{courseCenterData.Credit.toFixed(1)}}分</span></p>
+          <p>时长：{{courseCenterData.Time}}小时</p>
+        </div>
+      </li>
+    </ul>
+    <p ng-show="showNoCourse" class="result">暂无课程</p>
+  </div>
+</div>
+
+<style>
+  .courselCenter {
+    border-bottom: 6px solid #db1011;
+  }
+  .courselCenter .courseCategory{
+
+  }
+  .courselCenter .courseCategory li{
+    margin-right: 19px;
+  }
+  .courselCenter .courseCategory li .categoryImg{
+    width: 150px;
+    height: 180px;
+  }
+  .courselCenter .courseCategory li .categoryName{
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+  }
+  .courselLink {
+    width: 100%;
+    background: #f8f8f8;
+  }
+
+  .courselLink.btn-group > .btn {
+    color: #666;
+    width: 169px;
+    height: 44px;
+    line-height: 44px;
+    background: #f8f8f8;
+    padding: 0;
+    border-color: #fff;
+    font-size: 18px;
+  }
+
+  .courselLink.btn-group > .btn:hover {
+    background-color: #f50001;
+    color: #fff;
+  }
+
+  .courselLink.btn-group > .btn.active {
+    color: #fff;
+    background-color: #db1011;
+  }
+
+  .courseList {
+    min-height: 440px;
+  }
+
+  .courseList ul li {
+    float: left;
+    margin-left: 10px;
+    min-height: 200px;
+    width: 200px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .courseList ul li .desc p {
+    line-height: 23px;
+    max-width: 190px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+  }
+  .courseList ul li .desc p a{
+    font-size: 16px;
+    color: #003333;
+  }
+  .courseList ul li .desc p a:hover{
+    color: #62a3db;
+  }
+
+  .courseList ul li .hotCourse {
+    position: absolute;
+    left: 10px;
+    top: 100px;
+    color: #fff;
+    font-size: 12px;
+  }
+  .courseList ul li .hotCourse .bg{
+    width: 66px;
+    height: 20px;
+    background-color: #000;
+    filter:alpha(opacity=40);
+    -moz-opacity:0.4;
+    -khtml-opacity: 0.4;
+    opacity: 0.4;
+  }
+  .courseList ul li .hotCourse .content{
+    position: absolute;
+    top:3px;
+    left: 5px;
+  }
+  .courseList ul li .hotCourse img{
+    position: relative;
+    top: -1px;
+  }
+
+  .courseList ul li a img {
+    width: 200px;
+    height: 127px;
+  }
+</style>

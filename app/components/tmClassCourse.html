@@ -1,0 +1,52 @@
+<!--班级课程-->
+<div class="trainingCenter">
+  <div class="com-header">
+    <p class="title">
+      <img src="../images/headerLeftIcon.png" alt="图标">
+      {{Data.TitleNav}}
+    </p>
+  </div>
+  <div class="tmBorder">
+    <ol class="breadcrumb">
+      <li class="currentPosition">您的当前位置:</li>
+      <li><a ui-sref="main">首页</a></li>
+      <li><a ui-sref="trainingClass">培训班</a></li>
+      <li><a ui-sref="classDetail({Id:Id})">{{Data.TrainingName}}</a></li>
+      <li class="active">{{Data.TitleNav}}</li>
+    </ol>
+    <div class="trclasstitle text-center tmBorder-red" dw-loading="classCourse">
+      <h2>{{Data.TitleNav}}</h2>
+      <div class="myTab">
+        <div class="tab-content">
+          <div class="tab-panel perlist">
+            <div class="title_bar">
+              <p class="list4">课程名称</p>
+              <p class="list3">进度</p>
+              <p class="list2">播放</p>
+            </div>
+            <div class="list" ng-repeat="list in Data.ListData">
+              <div class="list4 ellipsis">
+                <a ui-sref="courseDetails({Id:list.Id})" target="_blank"  title="{{list.Name}}">{{list.Name}}</a>
+              </div>
+              <div class="list3">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{list.BrowseScore}}" aria-valuemin="0" aria-valuemax="100" ng-style="{'width':list.BrowseScore+'%'};">
+                    {{list.BrowseScore.toFixed(1)}}%
+                  </div>
+                </div>
+              </div>
+              <div class="list2"><a ui-sref="play({Id:list.Id})" target="_blank">点击进入</a></div>
+            </div>
+            <div ng-transclude="pagation"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  h2 {
+    margin: 10px 0;
+  }
+</style>
+

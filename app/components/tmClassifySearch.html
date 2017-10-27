@@ -1,0 +1,55 @@
+<div class="classifySearch container_24">
+  <div class="container_24">
+    <form class="form-inline">
+      <div class="form-group">
+        <select class="select1 form-control" ng-init="selectedName = classify[0].type" ng-model="selectedName"
+                ng-options="x.type as x.name for x in classify" ng-change="judgement(selectedName)">
+        </select>
+      </div>
+      <div class="form-group">
+        <select ng-show="showCourseTypeName" class="form-control" ng-init="courseTypeName = courseType[0].type"
+                ng-model="courseTypeName"
+                ng-options="x.type as x.name for x in courseType">
+        </select>
+      </div>
+      <div class="form-group">
+        <input my-placeholder ng-model="searchTitle" type="text"
+               class="form-control searchText"
+               placeholder="请输入要搜索的关键字">
+      </div>
+      <button type="submit" class="btn btn-primary search_btn" ng-click="searchGlobal()">搜索</button>
+    </form>
+    <p class="tody">欢迎来到海南省干部在线学习中心，今天是{{tody}}</p>
+  </div>
+</div>
+<style>
+  .classifySearch .form-group .searchText{
+    width: 300px;
+  }
+  .classifySearch .form-group .select1{
+    width:140px;
+  }
+  .classifySearch{
+    height:60px;
+    width: 1185px;
+    background: #f1f1f1;
+    padding:12px 0 0 15px;
+  }
+  .classifySearch .form-group{
+  }
+  .search_btn{margin-left:-4px;
+    width:60px;height: 34px;
+    background: #444548;
+  }
+  .classifySearch form{float: left;}
+  .classifySearch .tody{
+    float: left;
+    width:540px;
+    height: 60px;
+    line-height: 39px;
+    text-align: center;
+    display: inline-block;
+    color: #333;
+    font-size: 16px;
+  }
+</style>

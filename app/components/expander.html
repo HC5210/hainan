@@ -1,0 +1,10 @@
+<!--折叠面板-->
+<div class="expander">
+  <div class="title">
+    <span  ng-click="toggle()" ng-hide="showMe" class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    <span  ng-click="toggle()" ng-show="showMe" class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+    <span><a ui-sref="courseCenter({channelId:channelId,channelType:channelType,topicType:topicType})">{{title}}<span ng-if="title=='历年课程资源库'" style="color:red;font-weight: bolder;">(不记录学分)</span></a></span>
+   <!--  <span ng-click="searchCourse({channelId:channelId,title: '',sort: 'Sort',order: 'desc',courseType: 'All',teacher: '',page: 1,channelType:channelType,topicType:topicType})"><a ui-sref="courseCenter({channelId:channelId,channelType:channelType,topicType:topicType})">{{title}}</a><span ng-if="title=='历年课程资源库'" style="color:red;font-weight: bolder;">(不记录学分)</span></span> -->
+  </div>
+  <div class="body" ng-show="showMe" ng-transclude></div>
+</div>

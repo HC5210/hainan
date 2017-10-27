@@ -1,0 +1,127 @@
+<div class="interactivecomments">	
+	<div class="com-header">
+	    <p class="title">
+	      <img src="../images/headerLeftIcon.png" alt="图标">
+	      互动与评论
+	    </p>
+	    <p class="more" ng-show="vms.activeTab==1">
+	      <a target="_blank" href="http://www.hngbzx.com/forum/showforum-2.aspx"><img src="../images/more.png" alt="更多"></a>
+	    </p>
+	    <p class="more" ng-show="vms.activeTab==2">
+	      <a ui-sref="commentsListMore" target="_blank"><img src="../images/more.png" alt="更多"></a>
+	    </p>
+	</div>
+	<div class="talk_con">
+		<ul  class="talk_tabs" ng-init="vms.activeTab=1">
+			<li class="li_hover" ng-class="{active:vms.activeTab == 1}">
+				<span ng-click="vms.activeTab=1">互动交流</span>
+			</li>
+			<li class="li_hover" ng-class="{active:vms.activeTab == 2}">
+				<span ng-click="vms.activeTab=2">课程评论</span>
+			</li>
+		</ul>
+		<div class="cons_tab">
+			<div class="tab_every" ng-show="vms.activeTab==1">
+				<!-- <ul class="tabevery_ul" ng-repeat="items in commData">
+					<li class="">
+						<a target="_blank">
+							{{items.Name}}							
+						</a>
+						<span class="comm_time">
+							{{items.CreateDate | dateFilter | date:'yyyy-MM-dd'}}
+						</span>
+					</li>
+				</ul> -->
+				<ul id="forumul">
+                    <script>      
+var topiclist='<li style="float:left;font-size:14px; width:98%;margin-left:1%;background: url(../images/red_dian.png) no-repeat left center;line-height:45px;height:45xp;border-bottom:1px solid #ddd;"><span style="float:left;padding-left:20px;"><a href="http://www.hngbzx.com/forum/showtopic-10.aspx" title="全面推进依法治国和党的领导是什么关系" target="_blank">全面推进依法治国和党的领导是什么关系</a></span><span style="float:right; padding-right:10px;">[2016-05-16]</span></li><li style="float:left;font-size:14px;  width:98%;margin-left:1%;background: url(../images/red_dian.png) no-repeat left center;line-height:45px;height:45xp;border-bottom:1px solid #ddd;"><span style="float:left;padding-left:20px;"><a href="http://www.hngbzx.com/forum/showtopic-9.aspx" title="积极学习" target="_blank">积极学习</a></span><span style="float:right; padding-right:10px;">[2015-10-14]</span></li><li style="float:left;font-size:14px;  width:98%;margin-left:1%;background: url(../images/red_dian.png) no-repeat left center;line-height:45px;height:45xp;border-bottom:1px solid #ddd;"><span style="float:left;padding-left:20px;"><a href="http://www.hngbzx.com/forum/showtopic-8.aspx" title="报到留名" target="_blank">报到留名</a></span><span style="float:right; padding-right:10px;">[2015-03-12]</span></li><li style="float:left;font-size:14px;  width:98%;margin-left:1%;background: url(../images/red_dian.png) no-repeat left center;line-height:45px;height:45xp;border-bottom:1px solid #ddd;"><span style="float:left;padding-left:20px;"><a href="http://www.hngbzx.com/forum/showtopic-6.aspx" title="经济发展新常态　海南发展新机遇" target="_blank">经济发展新常态　海南发展新机遇</a></span><span style="float:right; padding-right:10px;">[2014-12-02]</span></li>';               if (typeof (topiclist) != "undefined") { document.getElementById('forumul').innerHTML = topiclist; }</script>                
+                </ul>
+
+			</div>
+			<div class="tab_every" ng-show="vms.activeTab==2">
+				<ul class="tabevery_ul" ng-repeat="items2 in courseCommlast">
+					<li class="">
+						<div class="comm_course">
+							<span style="color:red">{{items2.UserName}}</span>评论了课程
+							<a target="_blank" ui-sref="courseDetails({Id:items2.CourseId})" style="color:#2278aa">
+								{{items2.CourseName}}							
+							</a>
+						</div>
+						<p class="comm_time">
+							{{items2.PostDate | dateFilter | date:'yyyy-MM-dd'}}
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+.interactivecomments{
+	margin-bottom: 20px;
+}
+	.talk_con{
+		min-height: 225px;
+		border:1px solid #ddd;
+	}
+	.talk_con .talk_tabs{
+		height: 45px;
+		widows: 100%;
+		background: #f8f8f8;
+	}
+	.talk_con ul li{
+		float: left;
+		width:170px;
+		text-align: center;
+		line-height: 45px;
+		height: 45px;color:#666;
+		font-size: 16px;
+	}
+	.talk_con ul .li_hover:hover{
+		background: #f50001;
+		color:#fff;
+	}
+	.talk_con ul li.active{
+		background: #db1011;
+		color: #fff;
+	}
+	.cons_tab{
+		width:100%;
+
+	}
+	.tab_every .tabevery_ul li{
+		width:98%;
+		height: 45px;
+		margin-left:1%;
+		border-bottom: 1px solid #ddd;
+		background: url(../images/red_dian.png) no-repeat left center;
+		font-size: 14px;
+	}
+	.tab_every .tabevery_ul li .comm_course{
+		width:640px;
+		float:left;
+		height: 45px;
+		text-align: left;
+		padding-left: 18px;
+		font-size: 14px;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+
+	}
+	.tab_every .tabevery_ul li .comm_time{
+		float: right;
+		width:150px;
+		height: 45px;
+	}
+	.tab_every .tabevery_ul li a{
+		/*width:555px;*/
+		font-size: 14px;
+		text-align: left;
+		/*padding-left: 20px;*/
+	}
+	.tab_every .tabevery_ul li i{}
+	.tab_every .tabevery_ul li span{
+		font-size: 14px;
+	}
+</style>

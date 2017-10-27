@@ -1,0 +1,110 @@
+<!--实时数据-->
+<div class="realTimeData">
+  <div class="realTimeList clearfix" dw-loading="realTimeList">
+      <div class="realdata">
+          <p class="title">实时数据</p>
+      </div>
+    <ul>
+      <li>
+        <div><!-- <img src="../images/realTime1.png" alt=""> --></div>
+        <a>注册人数</a><span>{{realTimeData.Model.UsersCount}}</span>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <div><!-- <img src="../images/realTime2.png" alt=""> --></div>
+        <a>在线人数</a><span>{{realTimeData.Model.OnlineUsersCount}}</span>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <div><!-- <img src="../images/realTime3.png" alt=""> --></div>
+        <a>课件数量</a><span>{{realTimeData.Model.CourseCount}}</span>
+      </li>
+    </ul>
+    <ul>
+      <li class="lastLi">
+        <div><!-- <img src="../images/realTime4.png" alt=""> --></div>
+        <a>访问次数</a><span>{{realTimeData.Model.UserVisitCount}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<style>
+/*  .realTimeData {
+    margin-top: 10px;
+  }*/
+  .realTimeData{margin-left:20px;}
+  .realTimeData .realTimeList{
+    width:387px;
+    height: 230px;
+    border:1px solid #dddddd;
+    text-align: center;
+  }
+  .realdata{
+    height:49px;
+    width: 384px;
+    background: #f3f3f3;
+    border-bottom: 1px solid #ddd;
+  }
+  .realdata .title{
+    width: 122px;
+    height: 49px;
+    border-right:1px solid #ddd;
+    background: #fff;
+    border-top:3px solid #db1011;
+    color:#db1011;
+    font-size: 16px;
+    line-height: 49px;
+    /*text-align: center;*/
+    font-weight: bolder;
+  }
+
+
+  .realTimeData .realTimeList ul{
+   
+   /* width: 142px;*/
+    height:36px;
+    /*text-align: center;*/
+   /* background-color: #f5f5f5;*/
+    color: #333333;
+  }
+  .realTimeData .realTimeList ul li{
+    width: 90%;
+    padding-left: 10%;
+    background: url(../images/red_dian.png) no-repeat 30px center;
+    height: 36px;
+    line-height: 36px;
+   /* margin-top: 10px;*/
+   font-size: 16px;
+  }
+ /* .realTimeData .realTimeList ul li p {
+   width:100px;
+   background: green;
+    font-size: 17px;
+    float: right;
+  }*/
+ /* .realTimeData .realTimeList ul li div {
+    padding-top: 10px;
+    float: left;
+    width:100px;
+    background: red;
+  }*/
+  .realTimeData .realTimeList ul li.lastLi {
+    border: none;
+  }
+  .realTimeData .realTimeList ul li a{
+    float: left;
+    width:85px;
+    text-align:center;
+  }
+  .realTimeData .realTimeList ul li span{
+    float: right;
+     width:100px;
+    text-align:right;
+  }
+/*  .realTimeData .realTimeList ul li div span{
+    margin-left: 10px;
+    display: inline-block;
+  }*/
+</style>

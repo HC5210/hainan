@@ -1,0 +1,42 @@
+<!--我的论文-->
+<div class="trainingCenter ">
+  <div class="com-header">
+    <p class="title">
+      <img src="../images/headerLeftIcon.png" alt="图标">
+      {{classPaperListData.TitleNav}}
+    </p>
+  </div>
+  <div class="tmBorder">
+    <ol class="breadcrumb">
+      <li class="currentPosition">您的当前位置:</li>
+      <li><a ui-sref="main">首页</a></li>
+      <li><a ui-sref="trainingClass">培训班</a></li>
+      <li><a ui-sref="classDetail({Id:Id})">{{classPaperListData.TrainingName}}</a></li>
+      <li class="active">{{classPaperListData.TitleNav}}</li>
+    </ol>
+    <div class="trclasstitle text-center tmBorder-red" dw-loading="classPaperList">
+      <h2 style="margin: 10px 0">{{classPaperListData.TitleNav}}</h2>
+      <div class="myTab">
+        <div class="tab-content">
+          <div class="tab-panel perlist">
+            <div class="title_bar">
+              <span class="list4">论文标题</span>
+              <span class="list2">作者</span>
+              <span class="list2">发布时间</span>
+            </div>
+            <div class="list" ng-repeat="list in classPaperListData.ListData">
+              <span class="list4">
+                <a ui-sref="classArticleDetail({Id:list.Id})" target="_blank">{{list.Name}}</a>
+              </span>
+              <span class="list2" ng-if="list.Author">{{list.Author}}</span>
+              <span class="list2" ng-if="!list.Author">暂无数据</span>
+              <span class="list2">{{list.CreatedDate |dateFilter | date:'yyyy-MM-dd'}}</span>
+            </div>
+            <div ng-transclude="pagation"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

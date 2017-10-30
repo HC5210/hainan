@@ -17,7 +17,7 @@ angular.module('luZhouApp')
     commonService.getData(ALL_PORT.BookCategory.url,'POST',ALL_PORT.BookCategory.data)
       .then(function(response) {
         $loading.finish('bookCategory');
-        $scope.bookCategory = response.Data;
+        $scope.bookCategory = response.Data.ListData;
       });
 
     //折叠面板控制

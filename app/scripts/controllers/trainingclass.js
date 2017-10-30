@@ -23,7 +23,7 @@ angular.module('luZhouApp')
       $.extend({}, ALL_PORT.GetTrainingClassTypeList.data))
       .then(function (response) {
         $loading.finish('courseClassify');
-        $scope.courseClassify = response.Data;
+        $scope.courseClassify = response.Data.ListData;
       });
 
     //折叠面板控制

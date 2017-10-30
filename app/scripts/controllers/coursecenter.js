@@ -15,13 +15,27 @@ angular.module('luZhouApp')
     //是否是调用推荐课程接口
     $scope.recommendApi = false;
     //显示loading
-    $loading.start('courseClassify');
+    $loading.start('categoryTree');
     
     //课程分类
     commonService.getData(ALL_PORT.CourseCategory.url, 'POST', ALL_PORT.CourseCategory.data)
       .then(function (response) {
-        $loading.finish('courseClassify');
-        $scope.courseClassify = response.Data;
+        $loading.finish('categoryTree');
+        var courseClassify = response.Data.ListData;
+        var loop = function (data) {
+          return data.map(function (item) {
+            if(item.Nodes){
+              loop(item.Nodes);
+              return $.extend(item,{id:item.Id,text:item.Name,state:'closed',children:item.Nodes});
+            }else {
+              return $.extend(item,{id:item.Id,text:item.Name,state:'open',children:item.Nodes});
+            }
+          })
+        }
+        var classify = loop(courseClassify);
+        
+        $scope.courseClassify = classify;
+        // $scope.courseClassify = allCourse;
       });
     //课程超市列表
     var searchText = $stateParams.title?$stateParams.title:'';
@@ -42,6 +56,12 @@ angular.module('luZhouApp')
       {name: '课程类型', id: '2'},
       {name: '主讲人', id: '3'}
     ];
+    $scope.timeLimitText = [
+      {name: '不限', id: '0'},
+      {name: '30分钟以下', id: '1'},
+      {name: '30~60分钟之内', id: '2'},
+      {name: '60分钟以上', id: '3'}
+    ];
     $scope.videoType = [
       {name: '所有类型', id: 'All'},
       {name: '三分屏', id: 'ThreeScreenCourse'},
@@ -61,10 +81,60 @@ angular.module('luZhouApp')
       teacher: teacher,
       channelType:channelType,
       topicType:topicType,
+      timeLimit:0,
     };
     $scope.paginationConf = $.extend({}, paginationConf, {itemsPerPage: courseListParams.rows});
     //搜索方法
-    $scope.searchCourse = function (options) {
+    //搜索方法
+    $scope.searchCourse = function (options, isOrder) {
+      $loading.start('courseSupermarket');
+      if (isOrder) {
+        if (courseListParams.order == 'desc') {
+          courseListParams.order = 'Asc';
+        } else if (courseListParams.order == 'Asc') {
+          courseListParams.order = 'desc';
+        }
+      } else {
+        courseListParams.order = 'desc';
+      }
+      var params = {};
+      if ($scope.selectedName == "1") {
+        $.extend(params, {teacher: '', title: $scope.searchTitle, courseType: $scope.selectedType,timeLimit:$scope.timeLimit}, options);
+      } else if ($scope.selectedName == "2") {
+        $.extend(params, {teacher: '', title: $scope.searchTitle, courseType: $scope.selectedType,timeLimit:$scope.timeLimit}, options);
+      } else if ($scope.selectedName == "3") {
+        $.extend(params, {teacher: $scope.searchTeacher, title: "", courseType: $scope.selectedType,timeLimit:$scope.timeLimit}, options);
+      }
+    
+      $scope.recommendApi = false;
+      $.extend(courseListParams, params);
+      $scope.paginationConf.currentPage = courseListParams.page;
+      commonService.getData(ALL_PORT.CourseList.url, 'POST', courseListParams)
+        .then(function (response) {
+          $loading.finish('courseSupermarket');
+          $scope.courseSupermarketData = response.Data;
+          $scope.paginationConf.totalItems = response.Data.Count;
+        });
+    };
+    $scope.judgement = function () {
+      $scope.searchTitle = "";
+      $scope.searchTeacher = "";
+      $scope.selectedType = "All";
+      if ($scope.selectedName == "1") {
+        $scope.showInput1 = true;
+        $scope.showInput2 = false;
+        $scope.showInput3 = false;
+      } else if ($scope.selectedName == "2") {
+        $scope.showInput1 = false;
+        $scope.showInput2 = true;
+        $scope.showInput3 = false;
+      } else if ($scope.selectedName == "3") {
+        $scope.showInput1 = false;
+        $scope.showInput2 = false;
+        $scope.showInput3 = true;
+      }
+    }
+    /*$scope.searchCourse = function (options) {
       $loading.start('courseSupermarket');
       $scope.recommendApi = false;
       $.extend(courseListParams, options);
@@ -129,7 +199,7 @@ angular.module('luZhouApp')
           });
         }
       }
-    };
+    };*/
     //智能推荐
     $scope.getRecommendCourse = function (options) {
       $scope.recommendApi = true;

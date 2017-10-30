@@ -16,7 +16,7 @@ angular.module('luZhouApp')
     if(categoryId&&categoryCode){
       categoryCode="";
     }
-    var parentId = "";
+    var parentId = "23";
     var titleNav = "新闻中心";
     if(categoryCode == "学习要求" || categoryCode == "联系我们" || categoryCode == "使用说明" || categoryCode == "在线帮助"){
       parentId = "4";
@@ -26,11 +26,11 @@ angular.module('luZhouApp')
       titleNav = "新闻中心";
     }
     //获取文章分类
-        commonService.getData(ALL_PORT.ArticleCategory.url, 'POST',
-          $.extend({}, ALL_PORT.ArticleCategory.data,{parentId:parentId,titleNav:titleNav}))
-          .then(function (response) {
-            $scope.categoryData = response.Data;
-          });
+    commonService.getData(ALL_PORT.ArticleCategory.url, 'POST',
+      $.extend({}, ALL_PORT.ArticleCategory.data,{parentId:parentId,titleNav:titleNav}))
+      .then(function (response) {
+        $scope.categoryData = response.Data.ListData;
+      });
 
     //分页
     var params = {
@@ -47,7 +47,6 @@ angular.module('luZhouApp')
     $scope.paginationConf = $.extend({},paginationConf,{itemsPerPage: 15});
     $scope.refreshList = function (options) {
       $loading.start('articleList');
-    //  debugger;
       commonService.getData(ALL_PORT.ArticleList.url,'POST',
         $.extend(params,options))
         .then(function(response) {

@@ -6,13 +6,12 @@
       <div id="demo1" class="slideBox">
           <ul class="items">
               <li ng-repeat="list in photoSlidedata" style="position: relative;" repeat-finish="startSlide('#demo1')">
-                  <a href={{list.Url}}  target="_blank" style="display: block;" >
+                  <a href={{list.PcUrl}}  target="_blank" style="display: block;" >
                      <img ng-src="{{list.Icon}}" err-Src="images/notFound.jpeg">
                   </a>
                   <div class="ellipsis" title="{{list.Name}}" target="_blank" style="display:block;width:450px;height:50px;position: absolute;bottom:0;left:0; color: #fff;line-height:50px;font-size: 16px;text-indent: 25px;">
                       {{list.Name}}
                   </div>
-                 
               </li>
           </ul>
       </div>

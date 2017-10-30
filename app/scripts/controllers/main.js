@@ -143,8 +143,12 @@ angular.module('luZhouApp')
               commonService.alertMs("平台当前在线人数到达上限，请稍后再试！");
             } else if (data.Type == 6) {
               commonService.alertMs(data.Message);
-            } else if (data.Type == 7) {} else if (data.Type == 10) {
-              commonService.alertMs("您还不是本平台成员，将为您转向您所在的平台：" + data.Message, 2);
+            } else if (data.Type == 7) {
+              
+            } else if (data.Type == 10) {
+              if(confirm("您还不是本平台成员，将为您转向您所在的平台：" + data.Message)){
+                location.href='http://'+data.Message
+              };
               return;
             } else if (data.Type == 11) {
               commonService.alertMs(data.Message);

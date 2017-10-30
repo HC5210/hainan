@@ -42,11 +42,7 @@ angular.module('luZhouApp')
                 if (id == node.id) return;
                 id = node.id;
                 if (scope.name == "course") {
-                  if (id == 0) {
-                    scope.search({channelId: '', flag: 'all', title: '', sort: 'Sort', order: 'desc', courseType: 'All', teacher: '', page: 1});
-                  } else {
-                    scope.search({channelId: id, flag: 'all', title: '', sort: 'Sort', order: 'desc', courseType: 'All', teacher: '', page: 1});
-                  }
+                  scope.search({channelId: id,channelType:node.Type,topicType:node.TopicType,flag: 'all', title: '', sort: 'Sort', order: 'desc', courseType: 'All', teacher: '', page: 1});
                 } else if (scope.name === 'book') {
                   scope.search({categoryId: id, ptitle: node.text, title: '', page: 1});
                 } else if (scope.name === 'article') {

@@ -144,7 +144,9 @@ angular.module('luZhouApp')
               $scope.showValidateCodeError=true;
               $scope.getVerifyCode();
             } else if (data.Type == 10) {
-              commonService.alertMs("您还不是本平台成员，将为您转向您所在的平台：" + data.Message, 2);
+              if(confirm("您还不是本平台成员，将为您转向您所在的平台：" + data.Message)){
+                location.href='http://'+data.Message
+              };
               $scope.getVerifyCode();
               return;
             } else if (data.Type == 11) {

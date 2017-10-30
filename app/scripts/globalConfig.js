@@ -179,7 +179,7 @@ var ALL_PORT = {
   },
   //通知公告
   GetLink: {
-    url: API_URL + "/mobile/GetLink",
+    url: API_URL + "/Page/GetLink",
     data: {page: '1', rows: '5'}
   },
   //通告公告列表

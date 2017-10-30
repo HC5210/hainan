@@ -22,7 +22,7 @@ angular.module('luZhouApp')
       .then(function (response) {
         $loading.finish('categoryTree');
         var courseClassify = response.Data.ListData;
-        var loop = function (data) {
+        /*var loop = function (data) {
           return data.map(function (item) {
             if(item.Nodes){
               loop(item.Nodes);
@@ -32,10 +32,8 @@ angular.module('luZhouApp')
             }
           })
         }
-        var classify = loop(courseClassify);
-        
-        $scope.courseClassify = classify;
-        // $scope.courseClassify = allCourse;
+        var classify = loop(courseClassify);*/
+        $scope.courseClassify = courseClassify;
       });
     //课程超市列表
     var searchText = $stateParams.title?$stateParams.title:'';

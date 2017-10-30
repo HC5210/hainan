@@ -10,6 +10,7 @@
 angular.module('luZhouApp')
   .controller('UserrankinglistCtrl', function ($scope, $rootScope, $cookieStore, commonService, $timeout, $loading, $stateParams) {
     //防伪造请求
+    $scope.showRank = showRank;
     $scope.vmusertab={};
     $scope.token = commonService.AntiForgeryToken();
     //用户学时排行
@@ -74,6 +75,14 @@ angular.module('luZhouApp')
         });
     }
     $scope.getUserRanking();
+
+    //个人学时排行  分平台
+        commonService.getData(ALL_PORT.RankUserList.url, 'POST',
+          $.extend({},ALL_PORT.RankUserList.data,{rows:15}) )
+          .then(function(response) {
+            $scope.ChilduserRankingData = response.Data;
+            $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
+          });
 
     $scope.paginationConf = $.extend({},paginationConf,{itemsPerPage: ALL_PORT.RankUserList.data.rows});
 

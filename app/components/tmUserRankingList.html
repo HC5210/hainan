@@ -6,7 +6,7 @@
       {{userLeaderRankingData.ViewBag.TitleNav}}
     </p>
   </div>
-  <div class="tmBorder">
+  <div  class="tmBorder" ng-if="showRank">
     <ol class="breadcrumb">
       <li class="currentPosition">您的当前位置:</li>
       <li><a ui-sref="main">首页</a></li>
@@ -80,6 +80,36 @@
               <span class="list2">{{UserModdelRankingData.Credit}}</span>
               <span class="list2">{{UserModdelRankingData.LearnTime}}</span>
               <span class="list2 ellipsis">{{UserModdelRankingData.DepartmentName}}</span>
+          </div>
+        </div>
+      </div>
+      <div tm-pagation conf="paginationConf"></div>
+    </div>
+  </div>
+  <!-- 分平台显示 -->
+  <div  class="tmBorder" ng-if="!showRank">
+    <ol class="breadcrumb">
+      <li class="currentPosition">您的当前位置:</li>
+      <li><a ui-sref="main">首页</a></li>
+      <li class="active">{{ChilduserRankingData.ViewBag.TitleNav}}</li>
+    </ol>
+    
+    <div class="myTab" dw-loading="userRankingList">
+      <div class="tab-content">
+        <div class="tab-panel perlist">
+          <div class="title_bar">
+            <span class="list2">排名</span>
+            <span class="list2">姓名</span>
+            <span class="list2">学时</span>
+            <span class="list2">学次</span>
+            <span class="list2">单位名称</span>
+          </div>
+          <div class="list" ng-repeat="ChilduserRankingData in ChilduserRankingData.ListData"  ng-class="{'rankListBg':$index%2!=0}">
+              <span class="list2">{{(paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1}}</span>
+              <span class="list2">{{ChilduserRankingData.UserName}}</span>
+              <span class="list2">{{ChilduserRankingData.Credit}}</span>
+              <span class="list2">{{ChilduserRankingData.LearnTime}}</span>
+              <span class="list2 ellipsis">{{ChilduserRankingData.DepartmentName}}</span>
           </div>
         </div>
       </div>

@@ -17,10 +17,10 @@
   <div class="courseCategory mar_top_20" ng-show="vmc.activeTab == 0">
     <ul class="clearfix">
       <li class="pull-left" ng-repeat="list in courselassification">
-        <a ui-sref="courseCenter({channelId:list.Id})" target="_blank">
-          <img class="categoryImg" ng-src="{{list.Img}}"  title="{{list.Name}}" err-Src="images/notFound.jpeg">
+        <a ui-sref="courseCenter({channelId:list.id})" target="_blank">
+          <img class="categoryImg" ng-src="{{list.Img}}"  title="{{list.text}}" err-Src="images/notFound.jpeg">
         </a>
-        <p class="categoryName"><a href="">{{list.Name}}</a></p>
+        <p class="categoryName"><a href="">{{list.text}}</a></p>
       </li>
     </ul>
     <p ng-show="showNoCourse1" class="result">暂无课程</p>

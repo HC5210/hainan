@@ -12,6 +12,7 @@ angular.module('luZhouApp')
       templateUrl: 'components/tmRankingTab.html',
       restrict: 'EA',
       controller: function ($scope, commonService, $loading) {
+        $scope.showRank = showRank;
         //单位排行
         $loading.start('rankingList');
         commonService.getData(ALL_PORT.LeftGroupRank.url, 'POST',
@@ -20,14 +21,15 @@ angular.module('luZhouApp')
             $loading.finish('rankingList');
             $scope.govermentRanking = response.Data;
           });
-        //个人学时排行
-        // commonService.getData(ALL_PORT.RankUserList.url, 'POST',
-        //   $.extend({},ALL_PORT.RankUserList.data,{rows:5}) )
-        //   .then(function(response) {
-        //     $scope.userRankingData = response.Data;
-        //   });
-        $scope.params = ALL_PORT.RankUserList.data;
-   
+        //个人学时排行  分平台
+        commonService.getData(ALL_PORT.RankUserList.url, 'POST',
+          $.extend({},ALL_PORT.RankUserList.data,{rows:6}) )
+          .then(function(response) {
+            $scope.ChilduserRankingData = response.Data;
+          });
+
+          
+    $scope.params = ALL_PORT.RankUserList.data;
     $scope.RankUserList = function (options) {
        $loading.start('rankingList');
        $.extend($scope.params, options,{rows:5});

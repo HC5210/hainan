@@ -59,20 +59,26 @@ var IMPORT = {
   }
   return "Other";
 })();*/
+
 var changeTheme = function(themeFile) {
   document.getElementById('global-css').setAttribute("href", "styles/"+themeFile+".css");
 }
+var showRank=true;
 var ORIGIN = (function () {
   var origin = window.origin;
-  var plate = "hunan";
-  if(origin === "http://localhost:9000"){
-    
-    plate="changsha";
-  }else {
-    plate="hunan";
+  var plate = "hainan";
+  // debugger
+  //http://test12.jy365.net   http://localhost:9000
+  if(origin === "http://test12.jy365.net"){
+    // plate="hainan";
+    plate="hainan";
+    showRank=true;
+  }else if(origin === "http://test13.jy365.net"){
+    plate="baisha";
+    showRank=false;
+    $(".link1").attr('href','')
   }
   return plate;
-  // changeTheme(themeFile);
 })();
 /**
  * 加密

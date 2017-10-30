@@ -11,10 +11,9 @@ angular.module('luZhouApp')
     return {
       templateUrl: 'components/tmHeader.html',
       restrict: 'EA',
-      scope: {},
       controller: function ($scope, $http, $loading, commonService, $state,$stateParams,$element, $attrs) {
         // 控制器逻辑放在这里
-        //收藏本站
+        $scope.plate = ORIGIN;
         $scope.addFavorite = commonService.AddFavorite;
         //设为首页
         $scope.setHome = commonService.SetHome;

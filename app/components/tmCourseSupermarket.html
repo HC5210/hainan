@@ -16,9 +16,10 @@
       <li ng-if="courseSupermarketData.ChannelName!=''" class="active">{{courseSupermarketData.ChannelName}}({{courseSupermarketData.Count}})</li>
     </ol>
     <form class="form-inline formSearch">
-      <select class="form-control" ng-init="selectedName = selectText[0].id" ng-model="selectedName"
+        <select class="form-control" ng-init="selectedName = selectText[0].id" ng-model="selectedName"
                   ng-options="x.id as x.name for x in selectText" ng-change="judgement()">
-          </select>
+        </select>
+        时长:
         <select class="form-control" ng-init="timeLimit = timeLimitText[0].id" ng-model="timeLimit"
                 ng-options="x.id as x.name for x in timeLimitText">
         </select>
@@ -33,7 +34,7 @@
                  placeholder="请输入搜索教师">
           <button type="submit" class="btn btn-danger searchBtn" ng-click="searchCourse({page: 1,sort: 'Sort',order: 'desc',flag:'all'})">搜索</button>
       </div>
-      </form>
+    </form>
     <div class="courseList  mar_top_15 clearfix" dw-loading="courseSupermarket">
       <div class="sortCourse clearfix">
         <div class="clearfix">
@@ -46,7 +47,7 @@
             <span><img src="images/dh.png"><a ng-click="judgement(selectedName.id,'AnimationCourse')">动画类课件</a></span>-->
             <span><a ng-click="searchCourse({courseType:'ThreeScreenCourse',title:'',teacher:'',flag:'all'})"><img src="../images/sfp.png"/> 精品三分屏</a></span>
             <span><a ng-click="searchCourse({courseType:'SingleCourse',title:'',teacher:'',flag:'all'})"><img src="../images/dsp.png"/> 单视频课件</a></span>
-            <span><a ng-click="searchCourse({courseType:'AnimationCourse',title:'',teacher:'',flag:'all'})"><img src="../images/dh.png"/> 动画类课件</a></span>
+            <!-- <span><a ng-click="searchCourse({courseType:'AnimationCourse',title:'',teacher:'',flag:'all'})"><img src="../images/dh.png"/> 动画类课件</a></span> -->
           </div>
         </div>
         <div class="title_bar">
@@ -88,7 +89,7 @@
               <div class="line line2">
                 <span style="width: 72px"><a>评论：({{courseList.CommentCount}})</a></span>
                 <span style="width: 108px">
-                  <span style="width:45px;">试卷：</span><span>{{courseList.Exam==0?'无':Exam}}</span>
+                  <span style="width:45px;">试卷：</span><span>{{courseList.Exam==0?'无':"有"}}</span>
                 </span>
                 <span>
                 <span>选课状态：</span>
@@ -122,7 +123,7 @@
     color: #0f0f0f;
   }
   .courseSupermarket .formSearch .form-group{
-      width: 65%;
+      width: 60%;
   }
   .courseSupermarket .formSearch input.form-control{
     width: 75%;

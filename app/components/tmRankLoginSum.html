@@ -16,14 +16,14 @@
       <div class="tab-content">
         <div class="tab-panel perlist">
           <div class="title_bar">
-            <span class="list2-5">排名</span>
-            <span class="list2-5">姓名</span>
-            <span class="list2-5">次数</span>
+            <span class="list3">排名</span>
+            <span class="list3">姓名</span>
+            <span class="list3">次数</span>
           </div>
           <div class="list" ng-repeat="rankCourseFinishList in rankCourseFinish.ListData"  ng-class="{'rankListBg':$index%2!=0}">
-            <span class="list2-5">{{(paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1}}</span>
-            <span class="list2-5">{{rankCourseFinishList.Name}}</span>
-            <span class="list2-5">{{rankCourseFinishList.Total}}</span>
+            <span class="list3">{{(paginationConf.currentPage-1)*paginationConf.itemsPerPage+$index+1}}</span>
+            <span class="list3">{{rankCourseFinishList.Name}}</span>
+            <span class="list3">{{rankCourseFinishList.Total}}</span>
           </div>
         </div>
       </div>

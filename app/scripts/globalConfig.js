@@ -1,7 +1,7 @@
 ﻿"user strict"
 //请求后台数据入口
-var API_URL = "/api";
-// var API_URL = "http://test12.jy365.net/api";
+// var API_URL = "/api";
+var API_URL = "http://test12.jy365.net/api";
 // var API_URL = "http://122.225.101.117:9090/api";
 // var API_URL = "http://192.168.1.25:9090/api2";
 var API_URL_ADMIN = API_URL + "/admin";
@@ -18,7 +18,7 @@ var IMPORT = {
   traininguserimportlist: "培训班用户导入模板.xls",
   groupimportfieldlist: "单位导入模板.xls",
   coursenodeimportlist: "课程节点导入模板.xls",
-  pointfieldimport: "字段导入模版",   
+  pointfieldimport: "字段导入模版",
   a: "用户排行设置导入模板.xls",
   courseurlimport: "课程地址模版.xls"
 };
@@ -59,6 +59,16 @@ var IMPORT = {
   }
   return "Other";
 })();*/
+ // 针对IE10
+        if (/*@cc_on!@*/false) {
+            document.documentElement.className += ' ie' + document.documentMode;
+        }
+        // 针对IE11及非IE浏览器，
+        // 因为IE11下document.documentMode为11，所以html标签上会加ie11样式类；
+        // 而非IE浏览器的document.documentMode为undefined，所以html标签上会加ieundefined样式类。
+        if (/*@cc_on!@*/true) {
+            document.documentElement.className += ' ie' + document.documentMode;
+        }
 
 var changeTheme = function(themeFile) {
   document.getElementById('global-css').setAttribute("href", "styles/"+themeFile+".css");
@@ -76,7 +86,7 @@ var ORIGIN = (function () {
   }else if(origin === "http://test13.jy365.net"){
     plate="baisha";
     showRank=false;
-    $(".link1").attr('href','')
+    // $(".link1").attr('href','')
   }
   return plate;
 })();
@@ -270,12 +280,12 @@ var ALL_PORT = {
   //课程分类
   CourseCategory: {
     url: API_URL + "/Page/CourseCategory",
-    data: {titleNav: "课程分类", sort: 'Id', order: 'asc',parentId:'',channelType:''}
+    data: {titleNav: "课程分类", sort: 'Sort,Id', order: 'asc,asc',parentId:'',channelType:''}
   },
     //首页课程分类
   MainCourseCategory: {
     url: API_URL + "/Page/CourseCategory",
-    data: {titleNav: "课程分类", sort: 'Id', order: 'asc',parentId:'51'}
+    data: {titleNav: "课程分类", sort: 'Sort,Id', order: 'asc,asc',parentId:'51'}
   },
   //特色海南，  案例教学
   GetChannelInfoList: {
@@ -287,11 +297,12 @@ var ALL_PORT = {
     url: API_URL + "/Page/GetChannelInfoList",
     data: {titleNav: "课程分类", sort: 'Sort', order: 'Desc',ParentId:'213'}
   },
-  //互动与评论
-   Communicate:{
-    url:API_URL+"/Page/Communicate",
-    data:{}
-  },
+  // //互动与评论
+  //  Communicate:{
+  //   url:API_URL+"/Page/Communicate",
+  //   data:{}
+  // },
+  //课程评论
   CourseCommentList:{
     url:API_URL+"/Page/CourseCommentList",
     data:{}
@@ -507,7 +518,7 @@ var ALL_PORT = {
     url: API_URL + "/Page/DelNote",
     data: {Id: ''}
   },
-  
+
   //添加计划
   StudyPlanAdd: {
     url: API_URL + "/Home/StudyPlanAdd",

@@ -21,7 +21,7 @@ angular.module('luZhouApp')
           $scope.paginationConf.totalItems = response.Data.Count;
         });
     }
-  
+
     $scope.$watch('paginationConf.currentPage', function () {
       var pageOptions = {
         page: $scope.paginationConf.currentPage,
@@ -34,7 +34,7 @@ angular.module('luZhouApp')
         commonService.getData(ALL_PORT.ArticleCategory.url, 'POST',
           $.extend({}, ALL_PORT.ArticleCategory.data,{parentId:'23'}))
           .then(function (response) {
-            $scope.categoryData = response.Data;
+            $scope.categoryData = response.Data.ListData;
           });
-    
+
   });

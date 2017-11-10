@@ -25,29 +25,6 @@ angular.module('luZhouApp')
     //       $scope.userRankingData = response.Data;
     //     });
     // }
-    //个人排行
-    //  $loading.start('userRankingList');
-    // $scope.getUserRanking=function(batchId){
-    //   commonService.getData(ALL_PORT.RankUserList.url,'POST',
-    //     $.extend({},ALL_PORT.RankUserList.data,{BatchId:batchId}))
-    //   .then(function(response){
-    //     $loading.finish('userRankingList');
-    //     if(batchId == 10){
-    //       $scope.userLeaderRankingData=response.Data;
-    //       $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
-    //     }else if(batchId == 7){
-    //       $scope.UserproRankingData=response.Data;
-    //       $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
-    //     }else if(batchId == 11){
-    //       $scope.UserModdelRankingData=response.Data;;
-    //       $scope.paginationConf.totalItems = response.Data.ViewBag.Count;
-    //     }
-    //   })
-
-    // };
-    //     $scope.getUserRanking(10);
-    //     $scope.getUserRanking(7);
-    //     $scope.getUserRanking(11);
         
     $scope.params = ALL_PORT.RankUserList.data;
    
@@ -58,7 +35,6 @@ angular.module('luZhouApp')
       commonService.getData(ALL_PORT.RankUserList.url, 'POST',$scope.params )
         .then(function(response) {
           $loading.finish('userRankingList');
-          
           if($scope.params.BatchId == 10){
             $scope.userLeaderRankingData = response.Data;
           }else if($scope.params.BatchId == 7){

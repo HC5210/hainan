@@ -22,17 +22,6 @@ angular.module('luZhouApp')
       .then(function (response) {
         $loading.finish('categoryTree');
         var courseClassify = response.Data.ListData;
-        /*var loop = function (data) {
-          return data.map(function (item) {
-            if(item.Nodes){
-              loop(item.Nodes);
-              return $.extend(item,{id:item.Id,text:item.Name,state:'closed',children:item.Nodes});
-            }else {
-              return $.extend(item,{id:item.Id,text:item.Name,state:'open',children:item.Nodes});
-            }
-          })
-        }
-        var classify = loop(courseClassify);*/
         $scope.courseClassify = courseClassify;
       });
     //课程超市列表
@@ -47,7 +36,6 @@ angular.module('luZhouApp')
     }else if($stateParams.searchType === "teacher"){
       teacher = searchText;
     }
-
     //搜索
     $scope.selectText = [
       {name: '课程名称', id: '1'},
@@ -63,8 +51,8 @@ angular.module('luZhouApp')
     $scope.videoType = [
       {name: '所有类型', id: 'All'},
       {name: '三分屏', id: 'ThreeScreenCourse'},
-      {name: '单视频', id: 'SingleCourse'},
-      {name: '动画类', id: 'AnimationCourse'}
+      {name: '单视频', id: 'SingleCourse'}
+      // {name: '动画类', id: 'AnimationCourse'}
     ];
     var courseListParams = {
       page: 1,
@@ -132,72 +120,7 @@ angular.module('luZhouApp')
         $scope.showInput3 = true;
       }
     }
-    /*$scope.searchCourse = function (options) {
-      $loading.start('courseSupermarket');
-      $scope.recommendApi = false;
-      $.extend(courseListParams, options);
-      $scope.paginationConf.currentPage = courseListParams.page;
-      commonService.getData(ALL_PORT.CourseList.url, 'POST', courseListParams)
-        .then(function (response) {
-          $loading.finish('courseSupermarket');
-          $scope.courseSupermarketData = response.Data;
-          $scope.paginationConf.totalItems = response.Data.Count;
-          // if()
-        });
-    };
-    $scope.judgement = function (id, courseType, sort, orders) {
-      var order;
-      if (orders) {
-        if (courseListParams.order == 'desc') {
-          order = 'Asc';
-        } else if (courseListParams.order == 'Asc') {
-          order = 'desc';
-        }
-      } else {
-        order = 'desc';
-      }
-      if (id == 1) {
-        $scope.showInput1 = true;
-        $scope.showInput2 = false;
-        $scope.showInput3 = false;
-        if (courseType) {
-          $scope.searchCourse({title: $scope.searchTitle1, courseType: courseType, order: order});
-        } else if (courseType == null && sort) {
-          $scope.searchCourse({title: $scope.searchTitle1, sort: sort, order: order});
-        } else {
-          $scope.searchCourse({channelId: '', title: $scope.searchTitle1, order: order, teacher: ''});
-        }
-      } else if (id == 2) {
-        $scope.showInput1 = false;
-        $scope.showInput2 = true;
-        $scope.showInput3 = false;
-        $scope.searchCourse({
-          channelId: courseListParams.channelId,
-          courseType: $scope.searchTitle2.id,
-          sort: sort,
-          order: order,
-          teacher: '',
-          title: $scope.searchTitle22
-        });
-      } else if (id == 3) {
-        $scope.showInput1 = false;
-        $scope.showInput2 = false;
-        $scope.showInput3 = true;
-        if (courseType) {
-          $scope.searchCourse({title: $scope.searchTitle3, courseType: courseType, order: order})
-        } else if (courseType == null && sort) {
-          $scope.searchCourse({title: $scope.searchTitle1, sort: sort, order: order});
-        } else {
-          $scope.searchCourse({
-            channelId: courseListParams.channelId,
-            teacher: $scope.searchTitle3,
-            order: order,
-            title: '',
-            courseType: 'All'
-          });
-        }
-      }
-    };*/
+
     //智能推荐
     $scope.getRecommendCourse = function (options) {
       $scope.recommendApi = true;

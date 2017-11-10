@@ -12,7 +12,6 @@ angular.module('luZhouApp')
     var categoryCode = $stateParams.categoryCode?$stateParams.categoryCode:'';
     var search = $stateParams.title?$stateParams.title:'';
     var categoryId = $stateParams.categoryId?$stateParams.categoryId:'';
-
     if(categoryId&&categoryCode){
       categoryCode="";
     }
@@ -30,6 +29,7 @@ angular.module('luZhouApp')
       $.extend({}, ALL_PORT.ArticleCategory.data,{parentId:parentId,titleNav:titleNav}))
       .then(function (response) {
         $scope.categoryData = response.Data.ListData;
+        $scope.categoryTitle = response.Data.TitleNav;
       });
 
     //分页

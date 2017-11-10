@@ -47,14 +47,13 @@
             <div class="list0-75">删除</div>
           </div>
           <div class="list" ng-repeat="unFinish in TotalData.ListData.UnfinishModel">
-            <div class="list3 ellipsis" title="{{unFinish.Name}}">
+            <div class="list3 ellipsis" title="{{unFinish.Name}}" style="text-align: left;">
               <a  ui-sref="courseDetails({Id:unFinish.Id})" target="_blank">    
                 <span>
                  <img ng-if="unFinish.RequiredFlag"  src="../images/bixiu.png">
                  <img ng-if="!unFinish.RequiredFlag"  src="../images/xuanxiu.png">
                </span>        
                {{unFinish.Name}} 
-               
               </a>
               
             </div>
@@ -98,8 +97,14 @@
             <div class="list0-75">删除</div>
           </div>
           <div class="list" ng-repeat="Appointed in TotalData.ListData.AppointedModel">
-              <div class="list3 ellipsis" title="{{Appointed.Name}}"><a ui-sref="courseDetails({Id:Appointed.Id})"
-                                                                         target="_blank">{{Appointed.Name}}</a></div>
+              <div class="list3 ellipsis" title="{{Appointed.Name}}" style="text-align: left;">
+              <a ui-sref="courseDetails({Id:Appointed.Id})" target="_blank">
+                  <span>
+                   <img ng-if="Appointed.RequiredFlag"  src="../images/bixiu.png">
+                   <img ng-if="!Appointed.RequiredFlag"  src="../images/xuanxiu.png">
+                 </span>    
+                {{Appointed.Name}}
+              </a></div>
               <div class="list1-5">
               <div class="progress">
                 <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
@@ -139,8 +144,14 @@
             <div class="list0-75">删除</div>
           </div>
           <div class="list" ng-repeat="Finish in TotalData.ListData.FinishModel">
-              <div class="list3 ellipsis" title="{{Finish.Name}}">
-                <a ui-sref="courseDetails({Id:Finish.Id})" target="_blank">{{Finish.Name}}</a>
+              <div class="list3 ellipsis" title="{{Finish.Name}}" style="text-align: left;">
+                <a ui-sref="courseDetails({Id:Finish.Id})" target="_blank">
+                  <span>
+                   <img ng-if="Finish.RequiredFlag"  src="../images/bixiu.png">
+                   <img ng-if="!Finish.RequiredFlag"  src="../images/xuanxiu.png">
+                 </span> 
+                  {{Finish.Name}}
+                </a>
               </div>
               <div class="list1-5">
                 <div class="progress">

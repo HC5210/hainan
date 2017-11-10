@@ -134,7 +134,7 @@ angular
         controllerAs: 'articleDetail',
         data: {title: "文章内容"}
       })
-      
+
       .state('newsinfo', {
         url: '/newsinfo/:ID',
         data: {title: "新闻信息"},
@@ -388,7 +388,7 @@ angular
         controllerAs: 'userRankingList'
       })
       .state('userLogin', {
-        url: '/userLogin/:name/:params',
+        url: '/userLogin?name&params',
         data: {title: "登录"},
         templateUrl: 'views/Do/login.html',
         controller: 'LoginCtrl',
@@ -605,7 +605,7 @@ angular
       })
     $urlRouterProvider.otherwise('/error');
     // $locationProvider.html5Mode(true);
-    
+
     /*$routeProvider
      .when('/main', {
      templateUrl: 'views/main.html',
@@ -1010,7 +1010,7 @@ angular
      .otherwise({
      redirectTo: '/main'
      });*/
-    
+
     $httpProvider.defaults.headers.post = {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     };
@@ -1026,7 +1026,7 @@ angular
       if (toState.name == 'userLogin')return;// 登录界面
       if (toState.name == 'userRegister')return;// 注册界面
       if (toState.name == 'forgetPassword')return;//忘记密码
-      if (toState.name == 'articleDetail')return;//学习导航
+      //if (toState.name == 'articleDetail')return;//学习导航
      // console.log(toState)
       $.ajax({
         type: "POST",
@@ -1078,7 +1078,7 @@ angular
           $state.go('main');
         }
       });
-      
+
     });
     /* 路由状态变化成功 */
     $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
@@ -1095,7 +1095,7 @@ angular
         text: '',
       });
     });
-    
+
     //当视图开始加载，DOM渲染完成之前触发
     $rootScope.$on('$viewContentLoading', function (event, viewConfig) {
       if (!!$state.current.data) {
@@ -1104,10 +1104,10 @@ angular
         $rootScope.pageTitle = '干部教育网络学院';
       }
     });
-    
+
     /*//当视图加载完成，DOM渲染完成之后触发
      $rootScope.$on('$viewContentLoaded',function(event, viewConfig){
      // console.log(event,viewConfig);
-     
+
      });*/
   });

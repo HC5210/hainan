@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc directive
- * @name luZhouApp.directive:tmArticleCategory
+ * @name luZhouApp.directive:tmredbanner
  * @description
- * # tmArticleCategory
+ * # tmredbanner
  */
 angular.module('luZhouApp')
-  .directive('tmArticleCategory', function () {
+  .directive('tmRedBanner', function () {
     return {
-      templateUrl: 'components/tmArticleCategory.html',
+      templateUrl: 'components/tmRedBanner.html',
       restrict: 'EA',
       link: function postLink(scope, element, attrs) {
       }

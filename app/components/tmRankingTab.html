@@ -35,7 +35,7 @@
       </div>
       <div class="tab-panel perlist" ng-show="vm3.activeTab == 2">
         <!--个人排行-->
-        <div class="rank_classify" ng-if="showRank">
+        <div class="rank_classify">
           <ul class="rank_classify_title" ng-init="vm4.activeTabs =0">
             <li ng-class="{Tabactive:vm4.activeTabs == 0 }"><a ng-click="vm4.activeTabs = 0;RankUserList({BatchId:10})">省管干部</a></li>
             <li ng-class="{Tabactive:vm4.activeTabs == 1 }"><a ng-click="vm4.activeTabs = 1;RankUserList({BatchId:7})">处级干部</a></li>
@@ -87,7 +87,7 @@
             </ul>
           </div>
         </div>
-        <div class="child_project" ng-if="!showRank">
+        <!-- <div class="child_project" ng-if="!showRank">
           <div class="govermentRanking"  dw-loading="rankingList">
           <p class="title">
             <span class="rank1">排行</span>
@@ -102,7 +102,7 @@
             <li class="list2" title="{{ChilduserRankingData.DepartmentName}}">{{ChilduserRankingData.UserName}}</li>
             <li class="list3">{{ChilduserRankingData.Credit}}</li>
           </ul>
-        </div>
+        </div> -->
         </div>
       </div>
       <div class="tab-panel perlist" ng-show="vm3.activeTab == 3">

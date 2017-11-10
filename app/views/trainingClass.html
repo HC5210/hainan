@@ -3,7 +3,17 @@
 <div class="container_24">
   <div class="grid_6 mar_top_15">
     <!--<div tm-training-course-classify repeat-done="repeatDone"></div>-->
-      <div category classify-data="courseClassify" search="getClassList" name="'class'" title-nav="' 培训班分类'"></div>
+    <div class="articleCategory panel1-group"  dw-loading="courseClassify">
+      <div class="com-header">
+        <p class="title">
+          <img src="../images/headerLeftIcon.png" alt="图标">
+          培训班分类
+        </p>
+      </div>
+      <div class="tmBorder">
+        <div category classify-data="courseClassify" search="getClassList" name="'class'"></div>
+      </div>
+    </div>
       <div tm-class-my class-my-data="classMyData" class-type="classMyType"></div>
     <div tm-class-my class-my-data="ClassActiveData" class-type="classActiveType"></div>
     <div tm-class-my class-my-data="ClassRecentData" class-type="classRecentType"></div>

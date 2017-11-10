@@ -1529,3 +1529,38 @@ a.btn {
 .expander {
   padding: 5px;
 }
+/**
+ * 班级详情
+ */
+.classDetail .classDes {
+  text-align: center;
+}
+.classDetail .classDes .title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+}
+.classDetail .classDes .publish {
+  margin: 15px auto;
+}
+.classDetail .contentclassinfo {
+  text-indent: 2em;
+  line-height: 24px;
+  padding: 10px;
+}
+.classDetail .myTab .perlist .photo {
+  margin-top: 20px;
+}
+.classDetail .myTab .perlist .photo img {
+  width: 80%;
+  height: 130px;
+  border-radius: 4px;
+}
+.classDetail .myTab .tab-content {
+  min-height: 200px;
+}
+.classDetail .myTab .tab-content .classMore a {
+  display: inline-block;
+  padding: 4px 30px;
+  color: #db1011;
+}

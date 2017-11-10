@@ -23,7 +23,6 @@ angular.module('luZhouApp')
         });
     };
     queryDetail();
-    
     $scope.favoriteAdd = function (options, token) {
       var params = $.extend({}, ALL_PORT.FavoriteAdd.data, options, token)
       commonService.getData(ALL_PORT.FavoriteAdd.url, 'POST', params)

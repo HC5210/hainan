@@ -14,8 +14,7 @@ angular.module('luZhouApp')
       scope: {
         classifyData: "=",
         search: "=",
-        name: "=",
-        titleNav: "="
+        name: "="
       },
       controller: function ($scope) {
         $scope.hasNodes = function (item) {
@@ -41,7 +40,7 @@ angular.module('luZhouApp')
               onSelect: function (node) {
                 if (id == node.id) return;
                 id = node.id;
-                if (scope.name == "course") {
+                if (scope.name == 'course') {
                   scope.search({channelId: id,channelType:node.Type,topicType:node.TopicType,flag: 'all', title: '', sort: 'Sort', order: 'desc', courseType: 'All', teacher: '', page: 1});
                 } else if (scope.name === 'book') {
                   scope.search({categoryId: id, ptitle: node.text, title: '', page: 1});
@@ -49,6 +48,10 @@ angular.module('luZhouApp')
                   scope.search({categoryId: id, search: '', page: 1, CategoryCode: ''});
                 } else if (scope.name === 'class') {
                   scope.search({categoryId: id, page: 1, title: "", type: "just"});
+                }else if (scope.name === 'courseLink') {
+                  window.location.href="#/courseCenter?channelId="+id+"&channelType="+node.Type+"&topicType="+node.TopicType
+                }else if (scope.name === 'articleLink') {
+                  window.location.href="#/news/article?categoryId="+id
                 }
               }
             });

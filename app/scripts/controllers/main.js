@@ -167,7 +167,7 @@ angular.module('luZhouApp')
     //通知公告
     $loading.start('noticeAnnouncement');
     commonService.getData(ALL_PORT.noticeAnnouncement.url, 'POST',
-      $.extend({},ALL_PORT.noticeAnnouncement.data,{rows:4}))
+      $.extend({},ALL_PORT.noticeAnnouncement.data,{rows:7}))
       .then(function(response) {
         $loading.finish('noticeAnnouncement');
         $scope.noticeData = response.Data;
@@ -330,34 +330,23 @@ angular.module('luZhouApp')
       });
     };
     //推荐课程
-    $scope.getRecommendCourse = function () {
-      $scope.courseCenterData={};
-      $scope.imageCourse='';
-      $scope.showNoCourse=false;
-      $loading.start('courseList');
-      commonService.getData(ALL_PORT.RecommendCourse.url, 'POST',
-        $.extend({}, ALL_PORT.RecommendCourse.data, { page: '1', rows: 8 }))
-        .then(function(response) {
-          $loading.finish('courseList');
-          $scope.courseCenterData = response.Data.ListData;
-          $scope.imageCourse = response.Data.ImageCourse;
-          $scope.showNoCourse = response.Data.ListData.length == 0?true:false;
-        });
-    }
+    // $scope.getRecommendCourse = function () {
+    //   $scope.courseCenterData={};
+    //   $scope.imageCourse='';
+    //   $scope.showNoCourse=false;
+    //   $loading.start('courseList');
+    //   commonService.getData(ALL_PORT.RecommendCourse.url, 'POST',
+    //     $.extend({}, ALL_PORT.RecommendCourse.data, { page: '1', rows: 8 }))
+    //     .then(function(response) {
+    //       $loading.finish('courseList');
+    //       $scope.courseCenterData = response.Data.ListData;
+    //       $scope.imageCourse = response.Data.ImageCourse;
+    //       $scope.showNoCourse = response.Data.ListData.length == 0?true:false;
+    //     });
+    // }
     // $scope.getRecommendCourse();
 
-    //评论与互动
-    // $scope.getCommunicate();
-    $scope.getCommunicate = function () {
-      commonService.getData(ALL_PORT.Communicate.url, 'POST',
-        $.extend({}, ALL_PORT.Communicate.data, { page: '1', rows:4 }))
-        .then(function(response) {
-          $scope.commData=response.Data
-        });
-    }
-    $scope.getCommunicate();
-         //课程评论
-    // $scope.getCommunicate();
+    //课程评论
     $scope.getCourseCommentList = function () {
       commonService.getData(ALL_PORT.CourseCommentList.url, 'POST',
         $.extend({}, ALL_PORT.CourseCommentList.data, { page: '1', rows:4 }))
@@ -367,12 +356,12 @@ angular.module('luZhouApp')
     }
     $scope.getCourseCommentList();
     
-    $scope.getCommunicate = function () {
-      commonService.getData(ALL_PORT.Communicate.url, 'POST',
-        $.extend({}, ALL_PORT.Communicate.data, { page: '1', rows: 8 }))
-        .then(function(response) {
+    // $scope.getCommunicate = function () {
+    //   commonService.getData(ALL_PORT.Communicate.url, 'POST',
+    //     $.extend({}, ALL_PORT.Communicate.data, { page: '1', rows: 8 }))
+    //     .then(function(response) {
           
-        });
-    }
-    $scope.getCommunicate();
+    //     });
+    // }
+    //$scope.getCommunicate();
   });

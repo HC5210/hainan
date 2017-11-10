@@ -12,7 +12,7 @@ angular.module('luZhouApp')
       templateUrl: 'components/tmRankingTab.html',
       restrict: 'EA',
       controller: function ($scope, commonService, $loading) {
-        $scope.showRank = showRank;
+        // $scope.showRank = showRank;
         //单位排行
         $loading.start('rankingList');
         commonService.getData(ALL_PORT.LeftGroupRank.url, 'POST',

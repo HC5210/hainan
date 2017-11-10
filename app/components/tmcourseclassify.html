@@ -3,7 +3,7 @@
   <div class="com-header">
     <p class="title">
       <img src="../images/headerLeftIcon.png" alt="图标">
-      {{courseClassify.TitleNav}}
+      课程频道
     </p>
   </div>
   <div class="tmBorder">
@@ -77,16 +77,16 @@
         </div>
       </div>&ndash;&gt;
     </div>-->
-      <p class="panels" ng-repeat="courseList in courseClassify.ListData" ng-if="!courseList.Nodes"><a ui-sref="courseCenter({channelId:courseList.Id,channelType:courseList.Type,topicType:courseList.TopicType})" >{{courseList.Name}}</a>
-      <span ng-if="courseList.Name=='最新课程'"><img src="../images/kcNew.gif"></span>
-    </p>
-    <div ng-repeat="courseList in courseClassify.ListData" ng-if="courseList.Nodes" expander expander-title="courseList.Name" channel-type="courseList.Type" topic-type="courseList.TopicType"  channel-id="courseList.Id">
-      <p class="panels" ng-repeat="node in courseList.Nodes" ng-if="!node.Nodes"><a ui-sref="courseCenter({channelId:node.Id,channelType:node.Type,topicType:node.TopicType})" >{{node.Name}}</a></p>
-      <div ng-repeat="node in courseList.Nodes" ng-if="node.Nodes" expander expander-title="node.Name" channel-Type="node.Type" channel-id="node.Id" topic-type="node.TopicType"  >
-        <p class="panels" ng-repeat="node2 in node.Nodes"><a ui-sref="courseCenter({channelId:node2.Id,channelType:node2.Type,topicType:node2.TopicType})" >{{node2.Name}}</a></p>
-      </div>
-    </div>
-  
+      <!--<p class="panels" ng-repeat="courseList in courseClassify.ListData" ng-if="!courseList.Nodes"><a ui-sref="courseCenter({channelId:courseList.Id,channelType:courseList.Type,topicType:courseList.TopicType})" >{{courseList.Name}}</a>-->
+      <!--<span ng-if="courseList.Name=='最新课程'"><img src="../images/kcNew.gif"></span>-->
+    <!--</p>-->
+    <!--<div ng-repeat="courseList in courseClassify.ListData" ng-if="courseList.Nodes" expander expander-title="courseList.Name" channel-type="courseList.Type" topic-type="courseList.TopicType"  channel-id="courseList.Id">-->
+      <!--<p class="panels" ng-repeat="node in courseList.Nodes" ng-if="!node.Nodes"><a ui-sref="courseCenter({channelId:node.Id,channelType:node.Type,topicType:node.TopicType})" >{{node.Name}}</a></p>-->
+      <!--<div ng-repeat="node in courseList.Nodes" ng-if="node.Nodes" expander expander-title="node.Name" channel-Type="node.Type" channel-id="node.Id" topic-type="node.TopicType"  >-->
+        <!--<p class="panels" ng-repeat="node2 in node.Nodes"><a ui-sref="courseCenter({channelId:node2.Id,channelType:node2.Type,topicType:node2.TopicType})" >{{node2.Name}}</a></p>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div category classify-data="courseClassify" search="refreshList" name="'courseLink'"></div>
     <!-- <span style="margin-left:39px;display: block;color:red;font-weight:bold;">(注:历史课程不记录学时)</span> -->
   </div>
 </div>

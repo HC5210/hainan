@@ -36,7 +36,6 @@
                 </td>
                 <td class="item2">{{list.StartTime | dateFilter | date:'yyyy-MM-dd'}}~{{list.EndTime | dateFilter | date:'yyyy-MM-dd'}}</td>
                 <td class="item3">{{list.Address}}</td>
-
                 <td class="item4" ng-if="!list.ApplyStatus"><a class="btn btn-info" ng-click="addClass(list.Id)">点击报名</a></td>
                 <td class="item4" ng-if="list.ApplyStatus=='Normal'"><a disabled class="btn btn-success">{{JudgeStatus(list.ApplyStatus)}}</a></td>
                 <td class="item4" ng-if="list.ApplyStatus=='UnAudit'||list.ApplyStatus=='UnApprove'"><a disabled class="btn btn-default">{{JudgeStatus(list.ApplyStatus)}}</a></td>

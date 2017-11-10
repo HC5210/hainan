@@ -1,41 +1,25 @@
 <!--文章分类-->
 <div class="articleCategory panel1-group"  dw-loading="courseClassify">
-<!--   <div class="com-header">
-    <p class="title">
-      <img src="../images/headerLeftIcon.png" alt="图标">
-      {{categoryData.TitleNav}}
-    </p>
-  </div>
-  <div class="tmBorder">
-    <div ng-repeat="courseList in categoryData.ListData" ng-if="courseList.Nodes.length>0" expander2 expander-title="courseList.Name" title-click="refreshList" category-id="courseList.Id">
-      <p class="panels" ng-repeat="node in courseList.Nodes" ng-if="node.Nodes.length==0" ng-click="refreshList({categoryId:node.Id,CategoryCode:'',search: '',sort: 'Sort',order: 'desc',page: 1})"><a ui-sref="article">{{node.Name}}</a></p>
-      <div ng-repeat="node in courseList.Nodes" ng-if="node.Nodes.length>0" expander2 expander-title="node.Name" title-click="refreshList" category-id="node.Id">
-        <p class="panels" ng-repeat="node2 in node.Nodes" ng-click="refreshList({categoryId:node2.Id,CategoryCode:'',search: '',sort: 'Sort',order: 'desc',page: 1})"><a>{{node2.Name}}</a>{{node2.Name}}</p>
-      </div>
-    </div>
-    <p class="panels" ng-repeat="courseList in categoryData.ListData" ng-if="courseList.Nodes.length==0" ng-click="refreshList({categoryId:courseList.Id,CategoryCode:'',search: '',sort: 'Sort',order: 'desc',page: 1})">{{courseList.Name}}</p>
-    <p  class="panels" ><a ui-sref="noticelist">通知公告</a></p>
-  </div>
-</div> -->
-<!--文章分类-->
-<div class="articleCategory panel1-group"  dw-loading="courseClassify">
   <div class="com-header">
     <p class="title">
       <img src="../images/headerLeftIcon.png" alt="图标">
-      {{categoryData.TitleNav}}
+      {{categoryTitle}}
     </p>
   </div>
   <div class="tmBorder">
-    <div ng-repeat="courseList in categoryData.ListData" ng-if="courseList.Nodes.length>0" expander2 expander-title="courseList.Name" category-id="courseList.Id">
-      <p class="panels" ng-repeat="node in courseList.Nodes" ng-if="node.Nodes.length==0" ui-sref="article({categoryId:node.Id,categoryCode:''})">
-        {{node.Name}}({{node.TotalCount}})
-      </p>
-      <div ng-repeat="node in courseList.Nodes" ng-if="node.Nodes.length>0" expander2 expander-title="node.Name" category-id="node.Id">
-        <p class="panels" ng-repeat="node2 in node.Nodes" ui-sref="article({categoryId:node2.Id,categoryCode:''})">{{node2.Name}}({{node2.TotalCount}})</p>
-      </div>
-    </div>
-    <p class="panels" ng-repeat="courseList in categoryData.ListData" ng-if="courseList.Nodes.length==0" ui-sref="article({categoryId:courseList.Id,categoryCode:''})">{{courseList.Name}}({{courseList.TotalCount}})</p>
-    <p class="panels" ui-sref="noticelist">通知公告</p> <!-- ng-show="categoryData.TitleNav=='新闻中心'" -->
+    <div category classify-data="categoryData" search="refreshList" name="'article'"></div>
+    <p style="padding:5px 27px;" ng-if="categoryTitle!='在线帮助'" class="panels" ui-sref="noticelist">通知公告</p> <!-- ng-show="categoryData.TitleNav=='新闻中心'" -->
   </div>
 </div>
+<style>
+  .articleCategory .tmBorder .panels {
+  padding: 5px 27px;
+  cursor: pointer;
+  margin-left:0;
+}
+.articleCategory .tmBorder .panels:hover {
+  background-color: #fceeee;
+  color:red;
+}
+</style>
 

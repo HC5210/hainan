@@ -25,7 +25,6 @@ angular.module('luZhouApp')
       //课程分类
           commonService.getData(ALL_PORT.CourseCategory.url, 'POST', ALL_PORT.CourseCategory.data)
             .then(function (response) {
-              $loading.finish('courseClassify');
-              $scope.courseClassify = response.Data;
+              $scope.courseClassify = response.Data.ListData;
             });
   });

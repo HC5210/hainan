@@ -10,10 +10,12 @@
     </p>
   </div>
   <ul class="specialContent">
-    <li ng-repeat="list in studySpecialData.ListData.Topics">
+    <li ng-repeat="list in studySpecialData.ListData.Topics" style="position: relative;">
       <p>
         <a ui-sref="courseCenter({channelId:list.Id,channelType:'topics'})" target="_blank">
           <img class="specialImg" ng-src="{{list.Img}}" err-Src="images/notFound.jpeg" alt="">
+          <img ng-if="list.Type=='required'" class="img_YN" src="../images/zbixiu.png" />
+          <img ng-if="list.Type!='required'" class="img_YN" src="../images/zxuanxiu.png" />
         </a>
       </p>
       <p class="title ellipsis" title="{{list.SeriesName}}">
@@ -26,7 +28,7 @@
 <style>
   .specialTraining {
     margin-left: 16px;
-    margin-top: 25px;
+    margin-top: 20px;
   }
   .specialTraining .specialContent{
     margin-top: 20px;
@@ -48,5 +50,9 @@
     width:334px;
     height: 115px;
   }
-
+ .img_YN{
+    position: absolute;
+    top: 0;
+    right:0;
+  }
 </style>
